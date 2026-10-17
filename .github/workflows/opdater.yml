@@ -1,0 +1,39 @@
+# Henter friske data fra Dansk Hestevæddeløb og gemmer dem i repoet. Vercel bygger og udgiver ved hvert push.
+# Kører hver morgen, ved hvert push til main og når man trykker "Run workflow".
+name: Opdater data
+
+on:
+  schedule:
+    - cron: '15 4 * * *' # ca. kl. 06 dansk tid
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: data
+  cancel-in-progress: true
+
+jobs:
+  opdater:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node build.mjs --test
+      - run: node build.mjs --hent
+        env:
+          # Facebook-opslag hentes kun, når begge er sat (Settings → Secrets and variables → Actions).
+          FB_SIDE: ${{ vars.FB_SIDE }}
+          FB_TOKEN: ${{ secrets.FB_TOKEN }}
+      - name: Gem de nye data i repoet
+        run: |
+          git config user.name "Automatisk opdatering"
+          git config user.email "actions@users.noreply.github.com"
+          git add -A data assets
+          git diff --cached --quiet || git commit -m "Opdater data fra Dansk Hestevæddeløb"
+          git push
