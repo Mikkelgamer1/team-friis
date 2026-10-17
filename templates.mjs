@@ -943,7 +943,7 @@ export function sider(data, { v, idag, kort }) {
     })),
     side('404.html', () => ({
       titel: `Siden findes ikke | ${SITE.navn}`,
-      beskrivelse: 'Siden findes ikke.',
+      beskrivelse: `Siden findes ikke. Gå til forsiden for ${SITE.navn} – travtræner ${SITE.person} i ${SITE.sted} ved Skive.`,
       noindex: true,
       indhold: ikkeFundet(),
     })),
