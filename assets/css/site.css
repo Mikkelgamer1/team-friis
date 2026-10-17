@@ -251,16 +251,19 @@ h3 { font-size: 1.2rem; }
 .baner li:first-child::before { background: linear-gradient(90deg, rgba(37, 99, 235, .3), rgba(76, 196, 106, .22)); }
 .baner b { font-weight: 800; font-stretch: 112%; color: var(--blaa); font-variant-numeric: tabular-nums; }
 
-.kort { margin: 0; }
-.kort figcaption { margin-top: 12px; text-align: center; font-size: .84rem; color: var(--daemp); }
-.kort__svg { display: block; width: 100%; max-width: 480px; height: auto; margin-inline: auto; overflow: visible; filter: drop-shadow(0 30px 40px rgba(11, 19, 36, .18)); }
-.kort__land { fill: #fff; stroke: #c9d5ea; stroke-width: 1.2; stroke-linejoin: round; vector-effect: non-scaling-stroke; }
-.kort__rute { fill: none; stroke: url(#rute); stroke: var(--blaa-lys); stroke-width: 2; stroke-linecap: round; }
-.kort__prik { fill: var(--blaa); }
-.kort__ring { fill: none; stroke: var(--groen); stroke-width: 2.5; vector-effect: non-scaling-stroke; }
-.kort__tal { font: 700 9.5px var(--sans); fill: #fff; font-variant-numeric: tabular-nums; }
-.kort__navn { font: 700 10.5px var(--sans); font-stretch: 112%; fill: var(--tekst); paint-order: stroke; stroke: var(--lys); stroke-width: 3px; stroke-linejoin: round; }
-.kort--mini .kort__svg { max-width: 220px; filter: none; }
+/* Kortet ligger på et mørkt kort i holdets farver, så landet, ruterne og banerne står tydeligt */
+.kort { margin: 0; padding: clamp(20px, 3vw, 36px) clamp(16px, 2.5vw, 32px) 22px; border-radius: var(--r); background: radial-gradient(420px 300px at 30% 20%, rgba(37, 99, 235, .35), transparent 70%), radial-gradient(360px 260px at 90% 90%, rgba(76, 196, 106, .18), transparent 70%), var(--natt); box-shadow: 0 40px 70px -40px rgba(7, 11, 24, .8); }
+.kort figcaption { margin-top: 14px; text-align: center; font-size: .82rem; color: var(--lys-daemp); }
+.kort__svg { display: block; width: 100%; max-width: 460px; height: auto; margin-inline: auto; overflow: visible; }
+.kort__land { fill: #1b2a52; stroke: #4a64a8; stroke-width: 1.2; stroke-linejoin: round; vector-effect: non-scaling-stroke; }
+.kort__rute { fill: none; stroke: var(--cyan); stroke-width: 2.2; stroke-linecap: round; opacity: .9; }
+.kort__prik { fill: var(--blaa); stroke: #fff; stroke-width: 1.5; vector-effect: non-scaling-stroke; }
+.kort__ring { fill: none; stroke: var(--groen); stroke-width: 3; vector-effect: non-scaling-stroke; }
+.kort__tal { font: 800 9.5px var(--sans); fill: #fff; font-variant-numeric: tabular-nums; }
+.kort__navn { font: 700 11px var(--sans); font-stretch: 112%; fill: #fff; paint-order: stroke; stroke: var(--natt); stroke-width: 3.5px; stroke-linejoin: round; }
+.kort--mini { padding: 0; background: none; box-shadow: none; }
+.kort--mini .kort__svg { max-width: 220px; }
+.kort--mini .kort__land { fill: #e3eaf6; stroke: #9fb3d6; }
 .kort--mini .kort__navn { display: none; }
 .js [data-vis] .kort__rute { stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1s var(--ease) calc(var(--n) * 110ms + 350ms); }
 .js [data-vis].ses .kort__rute { stroke-dashoffset: 0; }
