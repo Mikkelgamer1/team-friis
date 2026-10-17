@@ -42,3 +42,5 @@ Alt indhold står i `templates.mjs`: kontaktoplysninger i `SITE` øverst. Design
 | Skive Trav: åbnet 1948, Flyvej siden 1966, lysanlæg 2019–20 | skive-trav.dk/om-os |
 | Team Friis, Lånum, e-mail, monterytter Tineke Borup | Facebook-siden facebook.com/Team.Friis (introduktion) |
 | Emblem, portræt, løbsfoto og hestekort | Team Friis' Facebook-side |
+| Slogan "Passion · Udvikling · Resultater" | Team Friis' egne grafikker på Facebook |
+| Samarbejdspartnere: KRAFFT og reron Fibertech | Logoer på Mortens løbsdragt; reronfibertech.dk |
