@@ -565,8 +565,8 @@ const forside = (o) => `
       <p class="indled" data-vis style="--i:2">${SITE.person} er født i 1983 og har A1-licens som både træner og kusk. Han træner hestene hjemme i ${SITE.sted} og kører selv mange af dem i løb.</p>
       <p data-vis style="--i:3">Team Friis er Morten og holdets monterytter Tineke Borup – plus en flok unge og voksne, der hjælper til i stalden.</p>
       <dl class="nogle" data-vis style="--i:4">
-        <div><dt>Sejre siden ${o.femAar.fra}</dt><dd>${o.femAar.sejre}</dd></div>
-        <div><dt>Starter siden ${o.femAar.fra}</dt><dd>${nf(o.femAar.starter)}</dd></div>
+        <div><dt>Sejre de seneste ${o.femAar.aar} sæsoner</dt><dd>${o.femAar.sejre}</dd></div>
+        <div><dt>Starter de seneste ${o.femAar.aar} sæsoner</dt><dd>${nf(o.femAar.starter)}</dd></div>
         <div><dt>Sejre som kusk i ${o.kusk.aar}</dt><dd>${o.kusk.sejre}</dd></div>
       </dl>
       <p class="valg" data-vis style="--i:5">${link('om-morten/', 'Mere om Morten')}</p>
@@ -654,7 +654,7 @@ ${sidehoved({
   tekst: `Professionel travtræner og kusk med ${esc(data.traener.licens)}-licens og manden bag Team Friis. Født i ${data.traener.foedt} – med Skive Trav som hjemmebane og stald i ${SITE.sted}.`,
   foto: 'traening-jog',
   pos: '50% 60%',
-  chips: [[o.femAar.sejre, `sejre siden ${o.femAar.fra}`], [o.heste.length, 'heste i træning'], ['A1', 'licens']],
+  chips: [[o.femAar.sejre, `sejre de seneste ${o.femAar.aar} sæsoner`], [o.heste.length, 'heste i træning'], ['A1', 'licens']],
 })}
 
 <section class="sek sek--lys">
