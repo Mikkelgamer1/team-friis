@@ -3,16 +3,18 @@
 export const SITE = {
   // ← Bekræft domænet før lancering (kan også sættes med miljøvariablen SITE_URL). På Vercel bruges projektets adresse.
   url: (process.env.SITE_URL || (process.env.VERCEL_PROJECT_PRODUCTION_URL && 'https://' + process.env.VERCEL_PROJECT_PRODUCTION_URL) || 'https://www.mortenfriis.dk').replace(/\/$/, ''),
-  navn: 'Morten Friis Travtræning',
+  navn: 'Team Friis',
   person: 'Morten Friis',
   fornavn: 'Morten',
   licens: 20245,
   telefon: '+45 24 26 64 99',
+  email: 'teamfriis@outlook.dk',
+  sted: 'Lånum',
   gade: 'Vittrupvej 19',
   postnr: '7850',
   by: 'Stoholm',
-  facebook: '', // ← sidens adresse; så vises link (og opslag, når FB_SIDE/FB_TOKEN er sat i GitHub)
-  instagram: '', // ← profilens adresse
+  facebook: 'https://www.facebook.com/Team.Friis', // opslag vises som kort, når FB_SIDE/FB_TOKEN er sat i GitHub
+  instagram: '', // ← profilens adresse, hvis stalden har en
   travinfo: 'https://travinfo.dk/licenseholder-tabs/20245',
   hjemmebane: 'https://www.skive-trav.dk/',
   kort: 'https://www.google.com/maps/search/?api=1&query=Vittrupvej+19%2C+7850+Stoholm',
@@ -23,6 +25,8 @@ const BANER = { Sk: 'Skive', 'Ål': 'Aalborg', 'År': 'Aarhus', Od: 'Odense', Ch
 const BANE_POS = { Sk: [9.06, 56.56], 'Ål': [9.87, 57.05], 'År': [10.2, 56.14], Od: [10.36, 55.4], Ch: [12.58, 55.75], Bi: [9.12, 55.73], Ny: [11.87, 54.77], Bs: [12.03, 55.46], Kl: [12.59, 55.77] };
 const HJEM = 'Sk';
 const SVENSKE = ['Åb', 'Jæ', 'Ax'];
+// Hestekort fra Team Friis' Facebook-side (hest-id → billede). Forlader hesten træningslisten, forsvinder kortet.
+const HESTEKORT = { 638223: 'diamant-oestervang', 656269: 'melody', 654259: 'licorice-cash', 661285: 'huff-n-puff', 653910: 'lovely-day' };
 const NAV = [['om-morten/', 'Om Morten'], ['stalden/', 'Stalden'], ['heste/', 'Heste'], ['resultater/', 'Resultater']];
 
 // ---------- små hjælpere ----------
@@ -63,6 +67,13 @@ const ekstern = (href, tekst, cls = 'link') => `<a class="${cls}" href="${href}"
 const knap = (href, tekst, cls = '') => `<a class="knap ${cls}" href="${R}${href}">${tekst} ${pil}</a>`;
 const link = (href, tekst, cls = '') => `<a class="link ${cls}" href="${R}${href}">${tekst} ${pil}</a>`;
 
+// Billede i flere bredder: billede('portraet', 1, [480, 720], alt, sizes)
+const billede = (navn, forhold, bredder, alt, sizes = '100vw', lazy = true) => `<img src="${R}assets/img/${navn}-${bredder[0]}.webp" srcset="${bredder.map((w) => `${R}assets/img/${navn}-${w}.webp ${w}w`).join(', ')}" sizes="${sizes}" width="${bredder.at(-1)}" height="${Math.round(bredder.at(-1) / forhold)}" alt="${esc(alt)}"${lazy ? ' loading="lazy" decoding="async"' : ' fetchpriority="high"'}>`;
+// Hestekortene fra Facebook som et galleri.
+const hestekort = (heste) => `<ul class="hestekort" aria-label="Hestekort fra Team Friis' Facebook">${heste.map((h, i) => `
+      <li data-vis style="--i:${i}"><a href="https://travinfo.dk/horse_tabs/${h.id}" target="_blank" rel="noopener">${billede('hest-' + HESTEKORT[h.id], 1.333, [600, 1200], `Hestekort for ${h.navn} fra Team Friis`, '(min-width: 1100px) 26vw, (min-width: 600px) 45vw, 80vw')}<span>${esc(h.navn)} ${ud}${nyFane}</span></a></li>`).join('')}
+    </ul>`;
+
 // Skærf i løbsfarverne sort, blå og grøn – staldens gennemgående mærke.
 const skaerf = (cls = '') => `<span class="skaerf ${cls}" aria-hidden="true"><i></i><i></i><i></i></span>`;
 // Afsnitsnummer som et startnummer i programmet (farverne skifter mellem sort, blå og grøn).
@@ -96,12 +107,13 @@ function afled(data, idag) {
     aldre: [Math.min(...heste.map((h) => h.alder)), Math.max(...heste.map((h) => h.alder))],
     femAar: { aar: traenerAar.length, sejre: traenerAar.reduce((s, x) => s + x.sejre, 0), starter: traenerAar.reduce((s, x) => s + x.starter, 0), fra: traenerAar.at(-1)?.aar },
     fb: (data.facebook ?? []).slice(0, 5),
+    kortheste: heste.filter((h) => HESTEKORT[h.id]),
   };
 }
 
 // ---------- fælles dele ----------
 
-const navnetraek = (cls = '') => `<span class="navnetraek ${cls}">${skaerf('skaerf--lille')}<span>Morten <b>Friis</b></span></span>`;
+const navnetraek = (cls = '') => `<span class="navnetraek ${cls}">${skaerf('skaerf--lille')}<span>Team <b>Friis</b></span></span>`;
 
 const top = (sti) => `
 <header class="top">
@@ -127,6 +139,7 @@ const top = (sti) => `
   </nav>
   <div class="menu__bund wrap">
     <a href="tel:${tlfLink}">${SITE.telefon}</a>
+    <a href="mailto:${SITE.email}">${SITE.email}</a>
   </div>
 </dialog>`;
 
@@ -135,7 +148,7 @@ const kontaktbaand = () => `
   <div class="wrap cta__inner">
     <div>
       <h2 data-vis>Skal din hest i træning hos Morten?</h2>
-      <p data-vis style="--i:1">Ring eller send en sms – så tager I en snak om hesten og mulighederne.</p>
+      <p data-vis style="--i:1">Ring, send en sms eller skriv – så tager I en snak om hesten og mulighederne.</p>
     </div>
     <div class="cta__valg" data-vis style="--i:2">
       <a class="cta__tlf" href="tel:${tlfLink}">${SITE.telefon}</a>
@@ -162,6 +175,7 @@ const bund = (o) => `
       <h2>Kontakt</h2>
       <ul>
         <li><a href="tel:${tlfLink}">${SITE.telefon}</a></li>
+        <li><a href="mailto:${SITE.email}">${SITE.email}</a></li>
         <li><address>${SITE.gade}<br>${SITE.postnr} ${SITE.by}</address></li>
       </ul>
     </div>
@@ -188,6 +202,7 @@ const organisation = () => ({
   description: 'Professionel travtræning med Skive Trav som hjemmebane: træning af løbsheste og tilkøring af ungheste.',
   url: `${SITE.url}/`,
   telephone: tlfLink,
+  email: SITE.email,
   image: `${SITE.url}/assets/img/og.jpg`,
   sport: 'Travsport',
   address: { '@type': 'PostalAddress', streetAddress: SITE.gade, postalCode: SITE.postnr, addressLocality: SITE.by, addressCountry: 'DK' },
@@ -231,7 +246,7 @@ ${noindex ? '<meta name="robots" content="noindex">' : '<link rel="canonical" hr
 <meta property="og:image" content="${SITE.url}/assets/img/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Morten Friis – travtræner, Skive">
+<meta property="og:image:alt" content="Team Friis – travtræner Morten Friis, Skive">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/png" sizes="48x48" href="${R}assets/img/ikon-48.png">
 <link rel="apple-touch-icon" href="${R}assets/img/ikon-180.png">
@@ -424,13 +439,17 @@ const forside = (o) => `
   ${skaerf('hero__skaerf')}
   <div class="wrap hero__gitter">
     <div class="hero__tekst">
-      <p class="etiket">Travtræner · Skive Trav</p>
+      <p class="etiket">Team Friis · Travtræner · Skive Trav</p>
       <h1><span>Morten</span> <span>Friis</span></h1>
-      <p class="hero__indled">Professionel travtræner og kusk med A1-licens og Skive Trav som hjemmebane. Stalden ligger i ${SITE.by} og har ${o.heste.length} heste i træning – fra åringer til rutinerede løbsheste.</p>
+      <p class="hero__indled">Professionel travtræner og kusk med A1-licens og Skive Trav som hjemmebane. Stalden ligger i ${SITE.sted} ved ${SITE.by} og har ${o.heste.length} heste i træning – fra åringer til rutinerede løbsheste.</p>
       <p class="valg">${knap('kontakt/', 'Kontakt Morten')} ${link('heste/', 'Se hestene')}</p>
     </div>
-    <aside class="programkort" aria-label="Sæsonen og næste start">
-      <p class="programkort__top"><span>Sæson ${o.saeson.aar}</span><span>Som træner</span></p>
+    <figure class="emblem">${billede('emblem', 1, [480, 900], 'Team Friis-emblemet: Morten Friis, travtræner', '(min-width: 901px) 34vw, 80vw', false)}</figure>
+  </div>
+</section>
+<section class="programkort" aria-label="Sæsonen og næste start">
+  <div class="wrap programkort__inner">
+      <p class="programkort__top">Sæson ${o.saeson.aar} <span>som træner</span></p>
       <dl>
         <div><dt>Starter</dt><dd>${o.saeson.starter}</dd></div>
         <div><dt>Sejre</dt><dd>${o.saeson.sejre}</dd></div>
@@ -442,16 +461,17 @@ const forside = (o) => `
         ${o.kommende.length ? `<p class="programkort__start"><b>${esc(o.kommende[0].hest)}</b> ${ugedag(o.kommende[0].dato)} ${kortDato(o.kommende[0].dato)} · ${esc(bane(o.kommende[0].bane))}, ${o.kommende[0].loeb}. løb</p>` : '<p class="programkort__start">Ingen startmeldte lige nu</p>'}
       </div>
       <p class="programkort__kilde">Dansk Hestevæddeløb · ${o.opdateret}</p>
-    </aside>
   </div>
 </section>
 
 <section class="sek">
   <div class="wrap">
     ${afsnit(1, 'Træneren')}
-    <div class="to">
-      <p class="indled" data-vis>${SITE.person} er født i 1983 og har A1-licens som både træner og kusk. Han træner hestene hjemme i ${SITE.by} og kører selv mange af dem i løb.</p>
+    <div class="traener">
+      <figure class="traener__foto" data-vis>${billede('portraet', 1, [480, 720], 'Morten Friis i løbsdragten', '(min-width: 901px) 26vw, 80vw')}</figure>
       <div data-vis style="--i:1">
+        <p class="indled">${SITE.person} er født i 1983 og har A1-licens som både træner og kusk. Han træner hestene hjemme i ${SITE.sted} og kører selv mange af dem i løb.</p>
+        <p>Team Friis er Morten og holdets monterytter Tineke Borup – plus en flok unge og voksne, der hjælper til i stalden.</p>
         <p>Over de seneste ${o.femAar.aar} sæsoner har stalden vundet ${o.femAar.sejre} løb på ${nf(o.femAar.starter)} starter. I ${o.saeson.aar} er det indtil videre blevet til ${o.saeson.sejre} sejre som træner og ${o.kusk.sejre} som kusk.</p>
         <p class="valg">${link('om-morten/', 'Mere om Morten')}</p>
       </div>
@@ -462,11 +482,17 @@ const forside = (o) => `
 <section class="sek sek--papir2">
   <div class="wrap">
     ${afsnit(2, 'Hestene', `${o.heste.length} heste står på træningslisten${o.ungheste.length > 1 ? ` – ${o.heste.length - o.ungheste.length} i løbsalderen og ${o.ungheste.length} ungheste på vej` : ''}. Her er de seks, der har tjent mest.`)}
+    ${o.kortheste.length ? hestekort(o.kortheste) : ''}
     <ol class="program">${o.heste.slice(0, 6).map(programlinje).join('')}
     </ol>
     <p class="valg" data-vis>${knap('heste/', `Hele træningslisten (${o.heste.length})`, 'knap--kant')}</p>
   </div>
 </section>
+
+<figure class="baand">
+  ${billede('i-loeb', 1.332, [800, 1368], 'Travheste i opløbet på banen', '100vw')}
+  <figcaption class="wrap">Fra Team Friis' Facebook-side</figcaption>
+</figure>
 
 <section class="sek">
   <div class="wrap">
@@ -510,26 +536,28 @@ ${sidehoved({
   sti: 'Om Morten',
   n: 1,
   h1: 'Morten Friis',
-  tekst: `Professionel travtræner og kusk med ${esc(data.traener.licens)}-licens. Født i ${data.traener.foedt} – med Skive Trav som hjemmebane og stald i ${SITE.by}.`,
+  tekst: `Professionel travtræner og kusk med ${esc(data.traener.licens)}-licens og manden bag Team Friis. Født i ${data.traener.foedt} – med Skive Trav som hjemmebane og stald i ${SITE.sted}.`,
   fakta: [['Sejre som træner', `${o.femAar.sejre} <small>siden ${o.femAar.fra}</small>`], ['Heste i træning', o.heste.length]],
 })}
 
 <section class="sek">
   <div class="wrap artikel">
     <aside class="fakta" data-vis>
+      <figure class="fakta__foto">${billede('portraet', 1, [480, 720], 'Morten Friis i løbsdragten', '(min-width: 901px) 320px, 92vw')}</figure>
       <h2 class="mini">Kort fortalt</h2>
       <dl>
         <div><dt>Født</dt><dd>${data.traener.foedt}</dd></div>
         <div><dt>Licens</dt><dd>${esc(data.traener.licens)} – professionel træner og kusk</dd></div>
         <div><dt>Hjemmebane</dt><dd>Skive Trav</dd></div>
         <div><dt>Løbsfarver</dt><dd>Sort, blå og grøn</dd></div>
-        <div><dt>Stald</dt><dd>${SITE.gade}, ${SITE.postnr} ${SITE.by}</dd></div>
+        <div><dt>Stald</dt><dd>Team Friis, ${SITE.sted}</dd></div>
         <div><dt>Heste i træning</dt><dd>${o.heste.length}</dd></div>
       </dl>
     </aside>
     <div class="prosa">
       <h2 data-vis>Træneren</h2>
-      <p class="indled" data-vis>${SITE.person} træner travheste fra sin stald i ${SITE.by} med Skive Trav som hjemmebane.</p>
+      <p class="indled" data-vis>${SITE.person} træner travheste under navnet Team Friis fra stalden i ${SITE.sted} ved ${SITE.by} med Skive Trav som hjemmebane.</p>
+      <p data-vis>Holdet består af Morten og monterytteren Tineke Borup – og en flok unge og voksne, der hjælper til i stalden og med andre opgaver.</p>
       <p data-vis>Lige nu står ${o.heste.length} heste på træningslisten – fra åringer til rutinerede løbsheste. Over de seneste ${o.femAar.aar} sæsoner har stalden vundet ${o.femAar.sejre} løb, og i ${o.saeson.aar} står stalden på ${o.saeson.sejre} sejre på ${o.saeson.starter} starter.</p>
       <h2 data-vis>Kusken</h2>
       <p data-vis>Morten kører selv mange af staldens heste. I ${o.kusk.aar} er det blevet til ${o.kusk.starter} starter og ${o.kusk.sejre} sejre i sulkyen.</p>
@@ -553,7 +581,7 @@ const stalden = (o) => `
 ${sidehoved({
   sti: 'Stalden',
   n: 2,
-  h1: `Stalden i ${SITE.by}`,
+  h1: `Stalden i ${SITE.sted}`,
   tekst: `${SITE.navn} træner ${o.heste.length} heste – med Skive Trav som hjemmebane.`,
   fakta: [['Heste i træning', o.heste.length], ['Alder', `${o.aldre[0]}–${o.aldre[1]} år`]],
 })}
@@ -584,7 +612,7 @@ ${sidehoved({
   <div class="wrap">
     ${afsnit(3, 'Adresse')}
     <div class="adresse" data-vis>
-      <address class="adresse__stor">${SITE.gade}<br>${SITE.postnr} ${SITE.by}</address>
+      <address class="adresse__stor">${SITE.navn}<br>${SITE.gade}, ${SITE.sted}<br>${SITE.postnr} ${SITE.by}</address>
       <p>${ekstern(SITE.kort, 'Åbn i Google Maps', 'knap knap--kant')}</p>
     </div>
   </div>
@@ -609,6 +637,7 @@ ${sidehoved({
 
 <section class="sek">
   <div class="wrap">
+    ${o.kortheste.length ? `<h2 class="mini" data-vis>Fra Team Friis' Facebook</h2>${hestekort(o.kortheste)}` : ''}
     ${hestegruppe('Løbsheste', o.heste.filter((h) => h.alder >= 3))}
     ${hestegruppe('2-årige', o.heste.filter((h) => h.alder === 2))}
     ${hestegruppe('Åringer', o.heste.filter((h) => h.alder <= 1))}
@@ -676,7 +705,7 @@ ${sidehoved({
   sti: 'Kontakt',
   n: 5,
   h1: 'Kontakt Morten',
-  tekst: 'Har du en hest, der skal i træning, eller et spørgsmål til stalden? Ring eller send en sms.',
+  tekst: 'Har du en hest, der skal i træning, eller et spørgsmål til stalden? Ring, send en sms eller skriv en mail.',
 })}
 
 <section class="sek">
@@ -686,10 +715,15 @@ ${sidehoved({
       <p class="kontakt__stor"><a href="tel:${tlfLink}">${SITE.telefon}</a></p>
       <p class="valg"><a class="knap knap--lys" href="tel:${tlfLink}">Ring op ${pil}</a> <a class="link link--lys" href="sms:${tlfLink}">Send en sms ${pil}</a></p>
     </div>
-    <div class="kontakt__felt kontakt__felt--kort" data-vis style="--i:1">
+    <div class="kontakt__felt" data-vis style="--i:1">
+      <h2 class="mini">E-mail</h2>
+      <p class="kontakt__stor kontakt__stor--mail"><a href="mailto:${SITE.email}">${SITE.email}</a></p>
+      <p class="valg"><a class="knap knap--kant" href="mailto:${SITE.email}?subject=${encodeURIComponent('Henvendelse fra hjemmesiden')}">Skriv en mail ${pil}</a></p>
+    </div>
+    <div class="kontakt__felt kontakt__felt--kort" data-vis style="--i:2">
       <div>
         <h2 class="mini">Stalden</h2>
-        <address class="kontakt__adr">${SITE.navn}<br>${SITE.gade}<br>${SITE.postnr} ${SITE.by}</address>
+        <address class="kontakt__adr">${SITE.navn}<br>${SITE.gade}, ${SITE.sted}<br>${SITE.postnr} ${SITE.by}</address>
         <p class="valg">${ekstern(SITE.kort, 'Find vej')}</p>
       </div>
       <div class="kort kort--mini">${danmarkskort([{ kode: HJEM, navn: 'Skive' }], 'Danmarkskort, hvor Skive er markeret')}</div>
@@ -719,7 +753,7 @@ export function sider(data, { v, idag, kort }) {
   };
   return [
     side('', () => ({
-      titel: `${SITE.person} – travtræner i Skive`,
+      titel: `${SITE.navn} – travtræner ${SITE.person}, Skive`,
       beskrivelse: `${SITE.person} er professionel travtræner og kusk med Skive Trav som hjemmebane. ${o.heste.length} heste i træning i ${SITE.by}.`,
       klasse: 'forside',
       indhold: forside(o),

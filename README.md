@@ -1,6 +1,6 @@
-# Morten Friis Travtræning – hjemmeside
+# Team Friis – hjemmeside
 
-Statisk site for travtræner Morten Friis (licens 20245). Ingen afhængigheder – kræver kun Node 20+.
+Statisk site for Team Friis og travtræner Morten Friis (licens 20245). Ingen afhængigheder – kræver kun Node 20+.
 
 ```
 node build.mjs            byg til dist/ med de gemte data
@@ -40,3 +40,5 @@ Alt indhold står i `templates.mjs`: kontaktoplysninger i `SITE` øverst. Design
 | Født 1983, A1-licens, hjemmebane Skive Trav, adresse, telefon, løbsfarver (sort/blå/grøn) | Dansk Hestevæddeløb (licens 20245) |
 | Træningsliste, resultater, statistik | Dansk Hestevæddeløb, opdateres dagligt |
 | Skive Trav: åbnet 1948, Flyvej siden 1966, lysanlæg 2019–20 | skive-trav.dk/om-os |
+| Team Friis, Lånum, e-mail, monterytter Tineke Borup | Facebook-siden facebook.com/Team.Friis (introduktion) |
+| Emblem, portræt, løbsfoto og hestekort | Team Friis' Facebook-side |
