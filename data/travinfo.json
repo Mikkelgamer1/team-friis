@@ -1,5 +1,5 @@
 {
- "opdateret": "2026-10-18T08:49:04.566Z",
+ "opdateret": "2026-10-19T09:50:16.151Z",
  "traener": {
   "foedt": 1983,
   "hjemmebane": "Skive Trav",
@@ -204,19 +204,6 @@
    "placeringer": "4-3-3",
    "praemier": 83727,
    "rekord": "16,8m 14,0ak *13,9am"
-  },
-  {
-   "id": 654259,
-   "navn": "Licorice Cash",
-   "alder": 4,
-   "koen": "Hingst",
-   "foedt": "2022-02-27",
-   "far": "Cash And Go (FR)",
-   "mor": "Show Time (DE)",
-   "starter": 28,
-   "placeringer": "1-4-2",
-   "praemier": 177250,
-   "rekord": "*20,6k 13,3ak 13,4am 14,8al"
   },
   {
    "id": 653910,
