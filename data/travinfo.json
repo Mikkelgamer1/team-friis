@@ -1,5 +1,5 @@
 {
- "opdateret": "2026-10-21T09:19:27.506Z",
+ "opdateret": "2026-10-22T09:22:39.153Z",
  "traener": {
   "foedt": 1983,
   "hjemmebane": "Skive Trav",
@@ -3683,5 +3683,30 @@
    "praemie": 10000
   }
  ],
- "kommende": []
+ "kommende": [
+  {
+   "dato": "2026-10-27",
+   "bane": "Jæ",
+   "loeb": 4,
+   "hestId": 652943,
+   "hest": "Le Mans",
+   "kusk": "Morten Friis"
+  },
+  {
+   "dato": "2026-10-27",
+   "bane": "Jæ",
+   "loeb": 5,
+   "hestId": 647771,
+   "hest": "Hokita",
+   "kusk": "Morten Friis"
+  },
+  {
+   "dato": "2026-10-27",
+   "bane": "Jæ",
+   "loeb": 7,
+   "hestId": 652274,
+   "hest": "M T Top Notch (SE)",
+   "kusk": "Morten Friis"
+  }
+ ]
 }
