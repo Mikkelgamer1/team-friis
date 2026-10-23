@@ -1,5 +1,5 @@
 {
- "opdateret": "2026-10-22T09:22:39.153Z",
+ "opdateret": "2026-10-23T09:18:37.398Z",
  "traener": {
   "foedt": 1983,
   "hjemmebane": "Skive Trav",
@@ -3706,6 +3706,14 @@
    "loeb": 7,
    "hestId": 652274,
    "hest": "M T Top Notch (SE)",
+   "kusk": "Morten Friis"
+  },
+  {
+   "dato": "2026-10-28",
+   "bane": "År",
+   "loeb": 4,
+   "hestId": 653984,
+   "hest": "Major Love (NL)",
    "kusk": "Morten Friis"
   }
  ]
