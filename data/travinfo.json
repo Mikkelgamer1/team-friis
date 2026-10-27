@@ -1,5 +1,5 @@
 {
- "opdateret": "2026-10-26T10:02:58.984Z",
+ "opdateret": "2026-10-27T09:46:30.338Z",
  "traener": {
   "foedt": 1983,
   "hjemmebane": "Skive Trav",
@@ -503,18 +503,6 @@
    "praemie": 0
   },
   {
-   "id": "837657-653910",
-   "dato": "2026-10-07",
-   "bane": "Sk",
-   "loeb": 4,
-   "hestId": 653910,
-   "hest": "Lovely Day",
-   "placering": "0",
-   "tid": "18,1a",
-   "distance": 2060,
-   "praemie": 0
-  },
-  {
    "id": "837657-661285",
    "dato": "2026-10-07",
    "bane": "Sk",
@@ -523,6 +511,18 @@
    "hest": "Huff N Puff (SE)",
    "placering": "0",
    "tid": "17,9ag",
+   "distance": 2060,
+   "praemie": 0
+  },
+  {
+   "id": "837657-653910",
+   "dato": "2026-10-07",
+   "bane": "Sk",
+   "loeb": 4,
+   "hestId": 653910,
+   "hest": "Lovely Day",
+   "placering": "0",
+   "tid": "18,1a",
    "distance": 2060,
    "praemie": 0
   },
@@ -539,18 +539,6 @@
    "praemie": 2000
   },
   {
-   "id": "837652-658341",
-   "dato": "2026-10-07",
-   "bane": "Sk",
-   "loeb": 1,
-   "hestId": 658341,
-   "hest": "Niiko Lane (SE)",
-   "placering": "0",
-   "tid": "19,6",
-   "distance": 2020,
-   "praemie": 0
-  },
-  {
    "id": "837652-657569",
    "dato": "2026-10-07",
    "bane": "Sk",
@@ -561,6 +549,18 @@
    "tid": "20,1",
    "distance": 2000,
    "praemie": 5000
+  },
+  {
+   "id": "837652-658341",
+   "dato": "2026-10-07",
+   "bane": "Sk",
+   "loeb": 1,
+   "hestId": 658341,
+   "hest": "Niiko Lane (SE)",
+   "placering": "0",
+   "tid": "19,6",
+   "distance": 2020,
+   "praemie": 0
   },
   {
    "id": "837613-654259",
@@ -1223,18 +1223,6 @@
    "praemie": 3500
   },
   {
-   "id": "836301-653984",
-   "dato": "2026-07-24",
-   "bane": "År",
-   "loeb": 4,
-   "hestId": 653984,
-   "hest": "Major Love (NL)",
-   "placering": "1",
-   "tid": "14,9a",
-   "distance": 1800,
-   "praemie": 35000
-  },
-  {
    "id": "836301-654259",
    "dato": "2026-07-24",
    "bane": "År",
@@ -1245,6 +1233,18 @@
    "tid": "15,2a",
    "distance": 1800,
    "praemie": 12250
+  },
+  {
+   "id": "836301-653984",
+   "dato": "2026-07-24",
+   "bane": "År",
+   "loeb": 4,
+   "hestId": 653984,
+   "hest": "Major Love (NL)",
+   "placering": "1",
+   "tid": "14,9a",
+   "distance": 1800,
+   "praemie": 35000
   },
   {
    "id": "836304-638223",
@@ -1319,18 +1319,6 @@
    "praemie": 3000
   },
   {
-   "id": "836133-656994",
-   "dato": "2026-07-18",
-   "bane": "År",
-   "loeb": 2,
-   "hestId": 656994,
-   "hest": "Master K",
-   "placering": "4",
-   "tid": "19,9",
-   "distance": 1800,
-   "praemie": 2000
-  },
-  {
    "id": "836133-658341",
    "dato": "2026-07-18",
    "bane": "År",
@@ -1341,6 +1329,18 @@
    "tid": "19,4",
    "distance": 1800,
    "praemie": 4000
+  },
+  {
+   "id": "836133-656994",
+   "dato": "2026-07-18",
+   "bane": "År",
+   "loeb": 2,
+   "hestId": 656994,
+   "hest": "Master K",
+   "placering": "4",
+   "tid": "19,9",
+   "distance": 1800,
+   "praemie": 2000
   },
   {
    "id": "835958-649680",
@@ -1535,16 +1535,16 @@
    "praemie": 0
   },
   {
-   "id": "835580-654259",
+   "id": "835580-654160",
    "dato": "2026-06-20",
    "bane": "År",
    "loeb": 4,
-   "hestId": 654259,
-   "hest": "Licorice Cash",
-   "placering": "2",
-   "tid": "16,5a",
+   "hestId": 654160,
+   "hest": "Lasse Højgård",
+   "placering": "0",
+   "tid": "17,8a",
    "distance": 2360,
-   "praemie": 18750
+   "praemie": 0
   },
   {
    "id": "835580-654093",
@@ -1559,16 +1559,16 @@
    "praemie": 3750
   },
   {
-   "id": "835580-654160",
+   "id": "835580-654259",
    "dato": "2026-06-20",
    "bane": "År",
    "loeb": 4,
-   "hestId": 654160,
-   "hest": "Lasse Højgård",
-   "placering": "0",
-   "tid": "17,8a",
+   "hestId": 654259,
+   "hest": "Licorice Cash",
+   "placering": "2",
+   "tid": "16,5a",
    "distance": 2360,
-   "praemie": 0
+   "praemie": 18750
   },
   {
    "id": "835544-656270",
@@ -1667,18 +1667,6 @@
    "praemie": 10000
   },
   {
-   "id": "835375-653592",
-   "dato": "2026-06-10",
-   "bane": "Sk",
-   "loeb": 4,
-   "hestId": 653592,
-   "hest": "Luigi Cæsar",
-   "placering": "2",
-   "tid": "17,5a",
-   "distance": 2060,
-   "praemie": 5000
-  },
-  {
    "id": "835375-659168",
    "dato": "2026-06-10",
    "bane": "Sk",
@@ -1691,14 +1679,14 @@
    "praemie": 0
   },
   {
-   "id": "835374-652943",
+   "id": "835375-653592",
    "dato": "2026-06-10",
    "bane": "Sk",
-   "loeb": 3,
-   "hestId": 652943,
-   "hest": "Le Mans",
+   "loeb": 4,
+   "hestId": 653592,
+   "hest": "Luigi Cæsar",
    "placering": "2",
-   "tid": "16,2a",
+   "tid": "17,5a",
    "distance": 2060,
    "praemie": 5000
   },
@@ -1713,6 +1701,18 @@
    "tid": "17,8a",
    "distance": 2060,
    "praemie": 0
+  },
+  {
+   "id": "835374-652943",
+   "dato": "2026-06-10",
+   "bane": "Sk",
+   "loeb": 3,
+   "hestId": 652943,
+   "hest": "Le Mans",
+   "placering": "2",
+   "tid": "16,2a",
+   "distance": 2060,
+   "praemie": 5000
   },
   {
    "id": "835273-647771",
@@ -1739,18 +1739,6 @@
    "praemie": 0
   },
   {
-   "id": "835263-654259",
-   "dato": "2026-06-04",
-   "bane": "År",
-   "loeb": 2,
-   "hestId": 654259,
-   "hest": "Licorice Cash",
-   "placering": "5",
-   "tid": "18,1a",
-   "distance": 2360,
-   "praemie": 2000
-  },
-  {
    "id": "835263-654093",
    "dato": "2026-06-04",
    "bane": "År",
@@ -1761,6 +1749,18 @@
    "tid": "18,1a",
    "distance": 2360,
    "praemie": 3000
+  },
+  {
+   "id": "835263-654259",
+   "dato": "2026-06-04",
+   "bane": "År",
+   "loeb": 2,
+   "hestId": 654259,
+   "hest": "Licorice Cash",
+   "placering": "5",
+   "tid": "18,1a",
+   "distance": 2360,
+   "praemie": 2000
   },
   {
    "id": "835191-649680",
@@ -1991,16 +1991,16 @@
    "praemie": 0
   },
   {
-   "id": "834574-659168",
+   "id": "834574-648851",
    "dato": "2026-05-06",
    "bane": "Sk",
    "loeb": 6,
-   "hestId": 659168,
-   "hest": "Milk And Alcohole (SE)",
-   "placering": "0",
-   "tid": "17,3a",
+   "hestId": 648851,
+   "hest": "Imagine Light",
+   "placering": "2",
+   "tid": "17,0a",
    "distance": 2060,
-   "praemie": 0
+   "praemie": 5000
   },
   {
    "id": "834574-654093",
@@ -2015,16 +2015,16 @@
    "praemie": 3500
   },
   {
-   "id": "834574-648851",
+   "id": "834574-659168",
    "dato": "2026-05-06",
    "bane": "Sk",
    "loeb": 6,
-   "hestId": 648851,
-   "hest": "Imagine Light",
-   "placering": "2",
-   "tid": "17,0a",
+   "hestId": 659168,
+   "hest": "Milk And Alcohole (SE)",
+   "placering": "0",
+   "tid": "17,3a",
    "distance": 2060,
-   "praemie": 5000
+   "praemie": 0
   },
   {
    "id": "834573-651999",
@@ -2303,18 +2303,6 @@
    "praemie": 350
   },
   {
-   "id": "833984-651984",
-   "dato": "2026-04-04",
-   "bane": "Sk",
-   "loeb": 6,
-   "hestId": 651984,
-   "hest": "Kal El",
-   "placering": "3",
-   "tid": "15,0a",
-   "distance": 2060,
-   "praemie": 12250
-  },
-  {
    "id": "833984-653592",
    "dato": "2026-04-04",
    "bane": "Sk",
@@ -2325,6 +2313,18 @@
    "tid": "tr3a",
    "distance": 2060,
    "praemie": 0
+  },
+  {
+   "id": "833984-651984",
+   "dato": "2026-04-04",
+   "bane": "Sk",
+   "loeb": 6,
+   "hestId": 651984,
+   "hest": "Kal El",
+   "placering": "3",
+   "tid": "15,0a",
+   "distance": 2060,
+   "praemie": 12250
   },
   {
    "id": "833978-638223",
@@ -2471,18 +2471,6 @@
    "praemie": 3000
   },
   {
-   "id": "833684-653984",
-   "dato": "2026-03-20",
-   "bane": "År",
-   "loeb": 4,
-   "hestId": 653984,
-   "hest": "Major Love (NL)",
-   "placering": "2",
-   "tid": "16,7a",
-   "distance": 2300,
-   "praemie": 5000
-  },
-  {
    "id": "833684-654259",
    "dato": "2026-03-20",
    "bane": "År",
@@ -2493,6 +2481,18 @@
    "tid": "16,9a",
    "distance": 2300,
    "praemie": 2000
+  },
+  {
+   "id": "833684-653984",
+   "dato": "2026-03-20",
+   "bane": "År",
+   "loeb": 4,
+   "hestId": 653984,
+   "hest": "Major Love (NL)",
+   "placering": "2",
+   "tid": "16,7a",
+   "distance": 2300,
+   "praemie": 5000
   },
   {
    "id": "833681-653592",
@@ -2903,6 +2903,18 @@
    "praemie": 7500
   },
   {
+   "id": "832937-654259",
+   "dato": "2025-12-29",
+   "bane": "Sk",
+   "loeb": 5,
+   "hestId": 654259,
+   "hest": "Licorice Cash",
+   "placering": "6",
+   "tid": "13,3a",
+   "distance": 1600,
+   "praemie": 3000
+  },
+  {
    "id": "832937-648851",
    "dato": "2025-12-29",
    "bane": "Sk",
@@ -2925,18 +2937,6 @@
    "tid": "13,1a",
    "distance": 1600,
    "praemie": 7500
-  },
-  {
-   "id": "832937-654259",
-   "dato": "2025-12-29",
-   "bane": "Sk",
-   "loeb": 5,
-   "hestId": 654259,
-   "hest": "Licorice Cash",
-   "placering": "6",
-   "tid": "13,3a",
-   "distance": 1600,
-   "praemie": 3000
   },
   {
    "id": "832928-647771",
@@ -2975,18 +2975,6 @@
    "praemie": 0
   },
   {
-   "id": "832844-654160",
-   "dato": "2025-12-19",
-   "bane": "År",
-   "loeb": 4,
-   "hestId": 654160,
-   "hest": "Lasse Højgård",
-   "placering": "0",
-   "tid": "17,2a",
-   "distance": 1800,
-   "praemie": 0
-  },
-  {
    "id": "832844-652016",
    "dato": "2025-12-19",
    "bane": "År",
@@ -2995,6 +2983,18 @@
    "hest": "Kryds Ved Støjberg",
    "placering": "0",
    "tid": "18,2a",
+   "distance": 1800,
+   "praemie": 0
+  },
+  {
+   "id": "832844-654160",
+   "dato": "2025-12-19",
+   "bane": "År",
+   "loeb": 4,
+   "hestId": 654160,
+   "hest": "Lasse Højgård",
+   "placering": "0",
+   "tid": "17,2a",
    "distance": 1800,
    "praemie": 0
   },
@@ -3071,18 +3071,6 @@
    "praemie": 0
   },
   {
-   "id": "832762-648851",
-   "dato": "2025-12-15",
-   "bane": "Sk",
-   "loeb": 3,
-   "hestId": 648851,
-   "hest": "Imagine Light",
-   "placering": "4",
-   "tid": "16,2a",
-   "distance": 2060,
-   "praemie": 1100
-  },
-  {
    "id": "832762-653592",
    "dato": "2025-12-15",
    "bane": "Sk",
@@ -3105,6 +3093,18 @@
    "tid": "15,9a",
    "distance": 2060,
    "praemie": 3750
+  },
+  {
+   "id": "832762-648851",
+   "dato": "2025-12-15",
+   "bane": "Sk",
+   "loeb": 3,
+   "hestId": 648851,
+   "hest": "Imagine Light",
+   "placering": "4",
+   "tid": "16,2a",
+   "distance": 2060,
+   "praemie": 1100
   },
   {
    "id": "832760-651999",
@@ -3323,18 +3323,6 @@
    "praemie": 1500
   },
   {
-   "id": "832487-648851",
-   "dato": "2025-11-28",
-   "bane": "Sk",
-   "loeb": 2,
-   "hestId": 648851,
-   "hest": "Imagine Light",
-   "placering": "4",
-   "tid": "19,6",
-   "distance": 2020,
-   "praemie": 1100
-  },
-  {
    "id": "832487-659168",
    "dato": "2025-11-28",
    "bane": "Sk",
@@ -3345,6 +3333,18 @@
    "tid": "19,8",
    "distance": 2020,
    "praemie": 0
+  },
+  {
+   "id": "832487-648851",
+   "dato": "2025-11-28",
+   "bane": "Sk",
+   "loeb": 2,
+   "hestId": 648851,
+   "hest": "Imagine Light",
+   "placering": "4",
+   "tid": "19,6",
+   "distance": 2020,
+   "praemie": 1100
   },
   {
    "id": "832391-650216",
@@ -3359,18 +3359,6 @@
    "praemie": 10000
   },
   {
-   "id": "832396-653138",
-   "dato": "2025-11-25",
-   "bane": "År",
-   "loeb": 3,
-   "hestId": 653138,
-   "hest": "Lærke D",
-   "placering": "7",
-   "tid": "18,1ag",
-   "distance": 1800,
-   "praemie": 500
-  },
-  {
    "id": "832396-652016",
    "dato": "2025-11-25",
    "bane": "År",
@@ -3381,6 +3369,18 @@
    "tid": "16,5a",
    "distance": 1800,
    "praemie": 2000
+  },
+  {
+   "id": "832396-653138",
+   "dato": "2025-11-25",
+   "bane": "År",
+   "loeb": 3,
+   "hestId": 653138,
+   "hest": "Lærke D",
+   "placering": "7",
+   "tid": "18,1ag",
+   "distance": 1800,
+   "praemie": 500
   },
   {
    "id": "832389-638223",
@@ -3599,18 +3599,6 @@
    "praemie": 0
   },
   {
-   "id": "832094-649680",
-   "dato": "2025-11-07",
-   "bane": "Sk",
-   "loeb": 5,
-   "hestId": 649680,
-   "hest": "J C Pilbro",
-   "placering": "6",
-   "tid": "16,4a",
-   "distance": 2060,
-   "praemie": 1000
-  },
-  {
    "id": "832094-653149",
    "dato": "2025-11-07",
    "bane": "Sk",
@@ -3633,6 +3621,18 @@
    "tid": "15,5a",
    "distance": 2060,
    "praemie": 10000
+  },
+  {
+   "id": "832094-649680",
+   "dato": "2025-11-07",
+   "bane": "Sk",
+   "loeb": 5,
+   "hestId": 649680,
+   "hest": "J C Pilbro",
+   "placering": "6",
+   "tid": "16,4a",
+   "distance": 2060,
+   "praemie": 1000
   },
   {
    "id": "832104-651984",
@@ -3714,6 +3714,38 @@
    "loeb": 4,
    "hestId": 653984,
    "hest": "Major Love (NL)",
+   "kusk": "Morten Friis"
+  },
+  {
+   "dato": "2026-10-30",
+   "bane": "Sk",
+   "loeb": 4,
+   "hestId": 653910,
+   "hest": "Lovely Day",
+   "kusk": "Morten Friis"
+  },
+  {
+   "dato": "2026-10-30",
+   "bane": "Sk",
+   "loeb": 6,
+   "hestId": 648851,
+   "hest": "Imagine Light",
+   "kusk": "Kasper K. Andersen"
+  },
+  {
+   "dato": "2026-10-30",
+   "bane": "Sk",
+   "loeb": 6,
+   "hestId": 653138,
+   "hest": "Lærke D",
+   "kusk": "Morten Friis"
+  },
+  {
+   "dato": "2026-10-30",
+   "bane": "Sk",
+   "loeb": 8,
+   "hestId": 657569,
+   "hest": "Mayidancenow",
    "kusk": "Morten Friis"
   }
  ]
