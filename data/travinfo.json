@@ -1,5 +1,5 @@
 {
- "opdateret": "2026-10-27T09:46:30.338Z",
+ "opdateret": "2026-10-28T10:32:07.713Z",
  "traener": {
   "foedt": 1983,
   "hjemmebane": "Skive Trav",
@@ -3685,30 +3685,6 @@
  ],
  "kommende": [
   {
-   "dato": "2026-10-27",
-   "bane": "Jæ",
-   "loeb": 4,
-   "hestId": 652943,
-   "hest": "Le Mans",
-   "kusk": "Morten Friis"
-  },
-  {
-   "dato": "2026-10-27",
-   "bane": "Jæ",
-   "loeb": 5,
-   "hestId": 647771,
-   "hest": "Hokita",
-   "kusk": "Morten Friis"
-  },
-  {
-   "dato": "2026-10-27",
-   "bane": "Jæ",
-   "loeb": 7,
-   "hestId": 652274,
-   "hest": "M T Top Notch (SE)",
-   "kusk": "Morten Friis"
-  },
-  {
    "dato": "2026-10-28",
    "bane": "År",
    "loeb": 4,
@@ -3746,6 +3722,14 @@
    "loeb": 8,
    "hestId": 657569,
    "hest": "Mayidancenow",
+   "kusk": "Morten Friis"
+  },
+  {
+   "dato": "2026-11-02",
+   "bane": "Ål",
+   "loeb": 4,
+   "hestId": 638223,
+   "hest": "Diamant Østervang",
    "kusk": "Morten Friis"
   }
  ]
