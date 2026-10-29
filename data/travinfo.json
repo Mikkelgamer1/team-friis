@@ -1,5 +1,5 @@
 {
- "opdateret": "2026-10-28T10:32:07.713Z",
+ "opdateret": "2026-10-29T10:51:48.969Z",
  "traener": {
   "foedt": 1983,
   "hjemmebane": "Skive Trav",
@@ -9,12 +9,12 @@
  "traenerStatistik": [
   {
    "aar": 2026,
-   "starter": 200,
+   "starter": 204,
    "sejre": 25,
    "toer": 32,
    "treer": 20,
-   "procent": 13,
-   "praemier": 767100
+   "procent": 12,
+   "praemier": 772850
   },
   {
    "aar": 2025,
@@ -56,12 +56,12 @@
  "kuskStatistik": [
   {
    "aar": 2026,
-   "starter": 262,
+   "starter": 269,
    "sejre": 32,
-   "toer": 36,
-   "treer": 25,
+   "toer": 37,
+   "treer": 26,
    "procent": 12,
-   "praemier": 938000
+   "praemier": 952250
   },
   {
    "aar": 2025,
@@ -135,9 +135,9 @@
    "foedt": "2019-06-27",
    "far": "Ens Snapshot (US)",
    "mor": "Optimal Sensei",
-   "starter": 54,
+   "starter": 55,
    "placeringer": "9-13-7",
-   "praemier": 399221,
+   "praemier": 400248,
    "rekord": "19,2k *13,1m 14,3l 11,7ak 12,5am"
   },
   {
@@ -200,9 +200,9 @@
    "foedt": "2022-04-11",
    "far": "Bvlgari Peak",
    "mor": "Gianina (SE)",
-   "starter": 23,
+   "starter": 24,
    "placeringer": "4-3-3",
-   "praemier": 83727,
+   "praemier": 87423,
    "rekord": "16,8m 14,0ak *13,9am"
   },
   {
@@ -239,7 +239,7 @@
    "foedt": "2019-04-04",
    "far": "Love You (FR)",
    "mor": "Adena Boko (SE)",
-   "starter": 61,
+   "starter": 62,
    "placeringer": "6-14-11",
    "praemier": 223800,
    "rekord": "15,7k 16,9m 18,8l 14,4ak 16,5am"
@@ -304,9 +304,9 @@
    "foedt": "2020-05-29",
    "far": "Executive Caviar (SE)",
    "mor": "M T Natalie (SE)",
-   "starter": 41,
+   "starter": 42,
    "placeringer": "9-11-2",
-   "praemier": 212273,
+   "praemier": 213300,
    "rekord": "18,7k *15,0m 15,4l 12,4ak 13,7am 14,5al"
   },
   {
@@ -454,6 +454,54 @@
   }
  ],
  "resultater": [
+  {
+   "id": "838020-653984",
+   "dato": "2026-10-28",
+   "bane": "År",
+   "loeb": 4,
+   "hestId": 653984,
+   "hest": "Major Love (NL)",
+   "placering": "0",
+   "tid": "15,3a",
+   "distance": 1800,
+   "praemie": 0
+  },
+  {
+   "id": "838009-652274",
+   "dato": "2026-10-27",
+   "bane": "Jæ",
+   "loeb": 7,
+   "hestId": 652274,
+   "hest": "M T Top Notch (SE)",
+   "placering": "0",
+   "tid": "15,2a",
+   "distance": 2140,
+   "praemie": 1027
+  },
+  {
+   "id": "838008-647771",
+   "dato": "2026-10-27",
+   "bane": "Jæ",
+   "loeb": 5,
+   "hestId": 647771,
+   "hest": "Hokita",
+   "placering": "0",
+   "tid": "13,8a",
+   "distance": 2140,
+   "praemie": 1027
+  },
+  {
+   "id": "838007-652943",
+   "dato": "2026-10-27",
+   "bane": "Jæ",
+   "loeb": 4,
+   "hestId": 652943,
+   "hest": "Le Mans",
+   "placering": "6",
+   "tid": "14,8a",
+   "distance": 2140,
+   "praemie": 3696
+  },
   {
    "id": "837846-638223",
    "dato": "2026-10-16",
@@ -3684,14 +3732,6 @@
   }
  ],
  "kommende": [
-  {
-   "dato": "2026-10-28",
-   "bane": "År",
-   "loeb": 4,
-   "hestId": 653984,
-   "hest": "Major Love (NL)",
-   "kusk": "Morten Friis"
-  },
   {
    "dato": "2026-10-30",
    "bane": "Sk",
