@@ -1,5 +1,5 @@
 {
- "opdateret": "2026-10-30T10:50:14.386Z",
+ "opdateret": "2026-10-31T10:21:04.810Z",
  "traener": {
   "foedt": 1983,
   "hjemmebane": "Skive Trav",
@@ -9,12 +9,12 @@
  "traenerStatistik": [
   {
    "aar": 2026,
-   "starter": 204,
+   "starter": 208,
    "sejre": 25,
    "toer": 32,
-   "treer": 20,
+   "treer": 21,
    "procent": 12,
-   "praemier": 772850
+   "praemier": 778850
   },
   {
    "aar": 2025,
@@ -56,12 +56,12 @@
  "kuskStatistik": [
   {
    "aar": 2026,
-   "starter": 269,
+   "starter": 274,
    "sejre": 32,
    "toer": 37,
-   "treer": 26,
+   "treer": 27,
    "procent": 12,
-   "praemier": 952250
+   "praemier": 960250
   },
   {
    "aar": 2025,
@@ -161,7 +161,7 @@
    "foedt": "2020-03-23",
    "far": "Classic Photo (US)",
    "mor": "Victoria Light",
-   "starter": 32,
+   "starter": 33,
    "placeringer": "2-7-4",
    "praemier": 103500,
    "rekord": "17,4m 13,2ak 15,2am"
@@ -213,7 +213,7 @@
    "foedt": "2022-05-17",
    "far": "Great Challenger (US)",
    "mor": "Super Sille",
-   "starter": 18,
+   "starter": 19,
    "placeringer": "1-2-3",
    "praemier": 46500,
    "rekord": "18,6k 16,8m 16,5ak 16,5am"
@@ -226,10 +226,10 @@
    "foedt": "2022-04-19",
    "far": "Gentle Tilly (SE)",
    "mor": "Flight Surgeon (US)",
-   "starter": 25,
-   "placeringer": "2-7-4",
-   "praemier": 92250,
-   "rekord": "19,7k 20,0m *14,5ak 15,1am"
+   "starter": 26,
+   "placeringer": "2-7-5",
+   "praemier": 95750,
+   "rekord": "19,7k 20,0m 14,3ak 15,1am"
   },
   {
    "id": 653984,
@@ -278,10 +278,10 @@
    "foedt": "2023-06-20",
    "far": "Ens Snapshot (US)",
    "mor": "Lady Pettersson",
-   "starter": 3,
+   "starter": 4,
    "placeringer": "0-1-1",
-   "praemier": 8500,
-   "rekord": "19,3m 18,8am"
+   "praemier": 11000,
+   "rekord": "19,3m 16,7am"
   },
   {
    "id": 656269,
@@ -454,6 +454,54 @@
   }
  ],
  "resultater": [
+  {
+   "id": "838053-657569",
+   "dato": "2026-10-30",
+   "bane": "Sk",
+   "loeb": 8,
+   "hestId": 657569,
+   "hest": "Mayidancenow",
+   "placering": "4",
+   "tid": "16,7a",
+   "distance": 2060,
+   "praemie": 2500
+  },
+  {
+   "id": "838055-653138",
+   "dato": "2026-10-30",
+   "bane": "Sk",
+   "loeb": 6,
+   "hestId": 653138,
+   "hest": "Lærke D",
+   "placering": "3",
+   "tid": "14,3a",
+   "distance": 1600,
+   "praemie": 3500
+  },
+  {
+   "id": "838055-648851",
+   "dato": "2026-10-30",
+   "bane": "Sk",
+   "loeb": 6,
+   "hestId": 648851,
+   "hest": "Imagine Light",
+   "placering": "0",
+   "tid": "14,8a",
+   "distance": 1600,
+   "praemie": 0
+  },
+  {
+   "id": "838054-653910",
+   "dato": "2026-10-30",
+   "bane": "Sk",
+   "loeb": 4,
+   "hestId": 653910,
+   "hest": "Lovely Day",
+   "placering": "0",
+   "tid": "17,2a",
+   "distance": 2060,
+   "praemie": 0
+  },
   {
    "id": "838020-653984",
    "dato": "2026-10-28",
@@ -3732,38 +3780,6 @@
   }
  ],
  "kommende": [
-  {
-   "dato": "2026-10-30",
-   "bane": "Sk",
-   "loeb": 4,
-   "hestId": 653910,
-   "hest": "Lovely Day",
-   "kusk": "Morten Friis"
-  },
-  {
-   "dato": "2026-10-30",
-   "bane": "Sk",
-   "loeb": 6,
-   "hestId": 648851,
-   "hest": "Imagine Light",
-   "kusk": "Kasper K. Andersen"
-  },
-  {
-   "dato": "2026-10-30",
-   "bane": "Sk",
-   "loeb": 6,
-   "hestId": 653138,
-   "hest": "Lærke D",
-   "kusk": "Morten Friis"
-  },
-  {
-   "dato": "2026-10-30",
-   "bane": "Sk",
-   "loeb": 8,
-   "hestId": 657569,
-   "hest": "Mayidancenow",
-   "kusk": "Morten Friis"
-  },
   {
    "dato": "2026-11-02",
    "bane": "Ål",
