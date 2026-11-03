@@ -1,5 +1,5 @@
 {
- "opdateret": "2026-11-02T12:17:56.666Z",
+ "opdateret": "2026-11-03T11:52:30.036Z",
  "traener": {
   "foedt": 1983,
   "hjemmebane": "Skive Trav",
@@ -9,12 +9,12 @@
  "traenerStatistik": [
   {
    "aar": 2026,
-   "starter": 208,
+   "starter": 209,
    "sejre": 25,
    "toer": 32,
-   "treer": 21,
+   "treer": 22,
    "procent": 12,
-   "praemier": 778850
+   "praemier": 782350
   },
   {
    "aar": 2025,
@@ -56,12 +56,12 @@
  "kuskStatistik": [
   {
    "aar": 2026,
-   "starter": 274,
+   "starter": 276,
    "sejre": 32,
    "toer": 37,
-   "treer": 27,
+   "treer": 28,
    "procent": 12,
-   "praemier": 960250
+   "praemier": 963750
   },
   {
    "aar": 2025,
@@ -109,9 +109,9 @@
    "foedt": "2015-05-10",
    "far": "Wishing Stone (US)",
    "mor": "Dia Østervang",
-   "starter": 113,
-   "placeringer": "15-15-18",
-   "praemier": 822669,
+   "starter": 114,
+   "placeringer": "15-15-19",
+   "praemier": 826169,
    "rekord": "14,9m 15,8l 11,6ak 11,9am 14,2al"
   },
   {
@@ -454,6 +454,18 @@
   }
  ],
  "resultater": [
+  {
+   "id": "838075-638223",
+   "dato": "2026-11-02",
+   "bane": "Ål",
+   "loeb": 4,
+   "hestId": 638223,
+   "hest": "Diamant Østervang",
+   "placering": "3",
+   "tid": "13,3a",
+   "distance": 1640,
+   "praemie": 3500
+  },
   {
    "id": "838053-657569",
    "dato": "2026-10-30",
@@ -3781,11 +3793,19 @@
  ],
  "kommende": [
   {
-   "dato": "2026-11-02",
-   "bane": "Ål",
-   "loeb": 4,
-   "hestId": 638223,
-   "hest": "Diamant Østervang",
+   "dato": "2026-11-06",
+   "bane": "Od",
+   "loeb": 2,
+   "hestId": 656269,
+   "hest": "Melody",
+   "kusk": "Morten Friis"
+  },
+  {
+   "dato": "2026-11-06",
+   "bane": "Od",
+   "loeb": 3,
+   "hestId": 652943,
+   "hest": "Le Mans",
    "kusk": "Morten Friis"
   }
  ]
