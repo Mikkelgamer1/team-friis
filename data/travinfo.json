@@ -1,5 +1,5 @@
 {
- "opdateret": "2026-11-03T11:52:30.036Z",
+ "opdateret": "2026-11-04T12:02:30.995Z",
  "traener": {
   "foedt": 1983,
   "hjemmebane": "Skive Trav",
@@ -3806,6 +3806,14 @@
    "loeb": 3,
    "hestId": 652943,
    "hest": "Le Mans",
+   "kusk": "Morten Friis"
+  },
+  {
+   "dato": "2026-11-07",
+   "bane": "År",
+   "loeb": 1,
+   "hestId": 657569,
+   "hest": "Mayidancenow",
    "kusk": "Morten Friis"
   }
  ]
