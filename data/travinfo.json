@@ -1,5 +1,5 @@
 {
- "opdateret": "2026-11-05T12:14:24.370Z",
+ "opdateret": "2026-11-06T12:01:46.610Z",
  "traener": {
   "foedt": 1983,
   "hjemmebane": "Skive Trav",
@@ -3814,6 +3814,14 @@
    "loeb": 1,
    "hestId": 657569,
    "hest": "Mayidancenow",
+   "kusk": "Morten Friis"
+  },
+  {
+   "dato": "2026-11-11",
+   "bane": "Ål",
+   "loeb": 6,
+   "hestId": 652274,
+   "hest": "M T Top Notch (SE)",
    "kusk": "Morten Friis"
   }
  ]
