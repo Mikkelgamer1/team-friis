@@ -1,5 +1,5 @@
 {
- "opdateret": "2026-11-06T12:01:46.610Z",
+ "opdateret": "2026-11-07T11:00:14.137Z",
  "traener": {
   "foedt": 1983,
   "hjemmebane": "Skive Trav",
@@ -9,12 +9,12 @@
  "traenerStatistik": [
   {
    "aar": 2026,
-   "starter": 209,
+   "starter": 211,
    "sejre": 25,
    "toer": 32,
-   "treer": 22,
+   "treer": 23,
    "procent": 12,
-   "praemier": 782350
+   "praemier": 785850
   },
   {
    "aar": 2025,
@@ -56,12 +56,12 @@
  "kuskStatistik": [
   {
    "aar": 2026,
-   "starter": 276,
+   "starter": 280,
    "sejre": 32,
    "toer": 37,
-   "treer": 28,
-   "procent": 12,
-   "praemier": 963750
+   "treer": 29,
+   "procent": 11,
+   "praemier": 969750
   },
   {
    "aar": 2025,
@@ -200,9 +200,9 @@
    "foedt": "2022-04-11",
    "far": "Bvlgari Peak",
    "mor": "Gianina (SE)",
-   "starter": 24,
-   "placeringer": "4-3-3",
-   "praemier": 87423,
+   "starter": 25,
+   "placeringer": "4-3-4",
+   "praemier": 90923,
    "rekord": "16,8m 14,0ak *13,9am"
   },
   {
@@ -291,7 +291,7 @@
    "foedt": "2023-05-20",
    "far": "Maharajah (SE)",
    "mor": "Wannabe",
-   "starter": 8,
+   "starter": 9,
    "placeringer": "3-1-0",
    "praemier": 36000,
    "rekord": "21,5k *18,6m 16,1am"
@@ -454,6 +454,30 @@
   }
  ],
  "resultater": [
+  {
+   "id": "838173-652943",
+   "dato": "2026-11-06",
+   "bane": "Od",
+   "loeb": 3,
+   "hestId": 652943,
+   "hest": "Le Mans",
+   "placering": "3",
+   "tid": "14,6a",
+   "distance": 2140,
+   "praemie": 3500
+  },
+  {
+   "id": "838172-656269",
+   "dato": "2026-11-06",
+   "bane": "Od",
+   "loeb": 2,
+   "hestId": 656269,
+   "hest": "Melody",
+   "placering": "0",
+   "tid": "16,9a",
+   "distance": 2140,
+   "praemie": 0
+  },
   {
    "id": "838075-638223",
    "dato": "2026-11-02",
@@ -3792,22 +3816,6 @@
   }
  ],
  "kommende": [
-  {
-   "dato": "2026-11-06",
-   "bane": "Od",
-   "loeb": 2,
-   "hestId": 656269,
-   "hest": "Melody",
-   "kusk": "Morten Friis"
-  },
-  {
-   "dato": "2026-11-06",
-   "bane": "Od",
-   "loeb": 3,
-   "hestId": 652943,
-   "hest": "Le Mans",
-   "kusk": "Morten Friis"
-  },
   {
    "dato": "2026-11-07",
    "bane": "År",
