@@ -1,5 +1,5 @@
 {
- "opdateret": "2026-11-07T11:00:14.137Z",
+ "opdateret": "2026-11-08T11:14:27.551Z",
  "traener": {
   "foedt": 1983,
   "hjemmebane": "Skive Trav",
@@ -9,12 +9,12 @@
  "traenerStatistik": [
   {
    "aar": 2026,
-   "starter": 211,
+   "starter": 212,
    "sejre": 25,
    "toer": 32,
-   "treer": 23,
+   "treer": 24,
    "procent": 12,
-   "praemier": 785850
+   "praemier": 789350
   },
   {
    "aar": 2025,
@@ -56,12 +56,12 @@
  "kuskStatistik": [
   {
    "aar": 2026,
-   "starter": 280,
+   "starter": 283,
    "sejre": 32,
    "toer": 37,
-   "treer": 29,
+   "treer": 30,
    "procent": 11,
-   "praemier": 969750
+   "praemier": 975250
   },
   {
    "aar": 2025,
@@ -278,10 +278,10 @@
    "foedt": "2023-06-20",
    "far": "Ens Snapshot (US)",
    "mor": "Lady Pettersson",
-   "starter": 4,
-   "placeringer": "0-1-1",
-   "praemier": 11000,
-   "rekord": "19,3m 16,7am"
+   "starter": 5,
+   "placeringer": "0-1-2",
+   "praemier": 14500,
+   "rekord": "19,5k 19,3m 16,7am"
   },
   {
    "id": 656269,
@@ -454,6 +454,18 @@
   }
  ],
  "resultater": [
+  {
+   "id": "838178-657569",
+   "dato": "2026-11-07",
+   "bane": "År",
+   "loeb": 1,
+   "hestId": 657569,
+   "hest": "Mayidancenow",
+   "placering": "3",
+   "tid": "19,5",
+   "distance": 1820,
+   "praemie": 3500
+  },
   {
    "id": "838173-652943",
    "dato": "2026-11-06",
@@ -3816,14 +3828,6 @@
   }
  ],
  "kommende": [
-  {
-   "dato": "2026-11-07",
-   "bane": "År",
-   "loeb": 1,
-   "hestId": 657569,
-   "hest": "Mayidancenow",
-   "kusk": "Morten Friis"
-  },
   {
    "dato": "2026-11-11",
    "bane": "Ål",
