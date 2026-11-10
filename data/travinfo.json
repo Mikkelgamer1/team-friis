@@ -1,5 +1,5 @@
 {
- "opdateret": "2026-11-09T12:46:58.587Z",
+ "opdateret": "2026-11-10T12:33:13.797Z",
  "traener": {
   "foedt": 1983,
   "hjemmebane": "Skive Trav",
@@ -3834,6 +3834,22 @@
    "loeb": 6,
    "hestId": 652274,
    "hest": "M T Top Notch (SE)",
+   "kusk": "Morten Friis"
+  },
+  {
+   "dato": "2026-11-13",
+   "bane": "Sk",
+   "loeb": 6,
+   "hestId": 648851,
+   "hest": "Imagine Light",
+   "kusk": "Casper M. Nielsen"
+  },
+  {
+   "dato": "2026-11-13",
+   "bane": "Sk",
+   "loeb": 6,
+   "hestId": 653138,
+   "hest": "Lærke D",
    "kusk": "Morten Friis"
   }
  ]
