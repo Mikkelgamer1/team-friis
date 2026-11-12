@@ -1,5 +1,5 @@
 {
- "opdateret": "2026-11-11T11:50:00.433Z",
+ "opdateret": "2026-11-12T12:36:35.521Z",
  "traener": {
   "foedt": 1983,
   "hjemmebane": "Skive Trav",
@@ -9,12 +9,12 @@
  "traenerStatistik": [
   {
    "aar": 2026,
-   "starter": 212,
-   "sejre": 25,
+   "starter": 213,
+   "sejre": 26,
    "toer": 32,
    "treer": 24,
    "procent": 12,
-   "praemier": 789350
+   "praemier": 799350
   },
   {
    "aar": 2025,
@@ -56,12 +56,12 @@
  "kuskStatistik": [
   {
    "aar": 2026,
-   "starter": 285,
-   "sejre": 32,
+   "starter": 288,
+   "sejre": 34,
    "toer": 38,
    "treer": 30,
-   "procent": 11,
-   "praemier": 1002500
+   "procent": 12,
+   "praemier": 1022500
   },
   {
    "aar": 2025,
@@ -304,9 +304,9 @@
    "foedt": "2020-05-29",
    "far": "Executive Caviar (SE)",
    "mor": "M T Natalie (SE)",
-   "starter": 42,
-   "placeringer": "9-11-2",
-   "praemier": 213300,
+   "starter": 43,
+   "placeringer": "10-11-2",
+   "praemier": 223300,
    "rekord": "18,7k *15,0m 15,4l 12,4ak 13,7am 14,5al"
   },
   {
@@ -454,6 +454,18 @@
   }
  ],
  "resultater": [
+  {
+   "id": "838213-652274",
+   "dato": "2026-11-11",
+   "bane": "Ål",
+   "loeb": 6,
+   "hestId": 652274,
+   "hest": "M T Top Notch (SE)",
+   "placering": "1",
+   "tid": "15,4a",
+   "distance": 2140,
+   "praemie": 10000
+  },
   {
    "id": "838178-657569",
    "dato": "2026-11-07",
@@ -3828,14 +3840,6 @@
   }
  ],
  "kommende": [
-  {
-   "dato": "2026-11-11",
-   "bane": "Ål",
-   "loeb": 6,
-   "hestId": 652274,
-   "hest": "M T Top Notch (SE)",
-   "kusk": "Morten Friis"
-  },
   {
    "dato": "2026-11-13",
    "bane": "Sk",
