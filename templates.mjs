@@ -125,6 +125,7 @@ function afled(data, idag) {
     seneste: data.resultater.slice(0, 10).map(medNavn),
     kommende: data.kommende.filter((k) => k.dato >= idag).map(medNavn),
     banetal,
+    sejrsbaner: banetal.filter((b) => b.sejre > 0 || b.kode === HJEM), // til kort og bjælker: baner uden sejre vises ikke
     banerIAar: [...banetal.filter((b) => b.navn !== 'Udlandet').map((b) => b.navn), ...(prNavn.Udlandet ? ['udenlandske baner'] : [])],
     svenske: banetal.filter((b) => SVENSKE.includes(b.kode)).map((b) => b.navn),
     ungheste: heste.filter((h) => h.alder <= 2),
@@ -663,10 +664,10 @@ const forside = (o, data) => {
       ${etiket('Banerne', ' data-vis')}
       <h2 data-vis style="--i:1">Hjemme i Skive – ude i hele landet.</h2>
       <p class="indled" data-vis style="--i:2">${baneTekst(o)}</p>
-      <div data-vis style="--i:3">${banebjaelker(o.banetal)}</div>
+      <div data-vis style="--i:3">${banebjaelker(o.sejrsbaner)}</div>
     </div>
     <figure class="kort" data-vis style="--i:2">
-      ${danmarkskort(o.banetal, `Danmarkskort med staldens sejre og starter pr. bane i ${o.saeson.aar}: ${o.banetal.map((b) => `${b.navn} ${sejreTekst(b.sejre)} på ${b.antal} starter`).join(', ')}.`)}
+      ${danmarkskort(o.sejrsbaner, `Danmarkskort med staldens sejre og starter pr. bane i ${o.saeson.aar}: ${o.sejrsbaner.map((b) => `${b.navn} ${sejreTekst(b.sejre)} på ${b.antal} starter`).join(', ')}.`)}
       <figcaption>Sejre pr. dansk bane i ${o.saeson.aar}. Boblens størrelse viser antal starter, og ringen markerer hjemmebanen.</figcaption>
     </figure>
   </div>
@@ -773,11 +774,11 @@ ${sidehoved({
       <h2 data-vis style="--i:1">Skive Trav.</h2>
       <p class="indled" data-vis style="--i:2">${baneTekst(o)}</p>
       <p data-vis style="--i:3">Banen åbnede i 1948 som Nordvestjysk Væddeløbsbane og har ligget på Flyvej i Skive siden 1966. Et lysanlæg fra 2019–20 gør det muligt at køre løb hele vinteren.</p>
-      <div data-vis style="--i:4">${banebjaelker(o.banetal)}</div>
+      <div data-vis style="--i:4">${banebjaelker(o.sejrsbaner)}</div>
       <p class="valg" data-vis style="--i:5">${ekstern(SITE.hjemmebane, 'skive-trav.dk')}</p>
     </div>
     <figure class="kort" data-vis style="--i:2">
-      ${danmarkskort(o.banetal, `Danmarkskort med staldens sejre og starter pr. bane i ${o.saeson.aar}: ${o.banetal.map((b) => `${b.navn} ${sejreTekst(b.sejre)} på ${b.antal} starter`).join(', ')}.`)}
+      ${danmarkskort(o.sejrsbaner, `Danmarkskort med staldens sejre og starter pr. bane i ${o.saeson.aar}: ${o.sejrsbaner.map((b) => `${b.navn} ${sejreTekst(b.sejre)} på ${b.antal} starter`).join(', ')}.`)}
       <figcaption>Sejre pr. dansk bane i ${o.saeson.aar}. Boblens størrelse viser antal starter, og ringen markerer hjemmebanen.</figcaption>
     </figure>
   </div>
