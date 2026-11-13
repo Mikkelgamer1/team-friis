@@ -578,9 +578,9 @@ const forside = (o, data) => {
   <div class="wrap traener">
     <figure class="traener__foto" data-vis>${billede('i-loeb', 'Travhest og kusk i opløbet', { sizes: '(min-width: 901px) 34vw, 90vw' })}</figure>
     <div>
-      ${etiket(SITE.person, ' data-vis')}
+      ${etiket(SITE.fornavn, ' data-vis')}
       <h2 data-vis style="--i:1">Træneren og kusken.</h2>
-      <p class="indled" data-vis style="--i:2">${SITE.person} er født i 1983 og har A1-licens som både træner og kusk. Han træner hestene hjemme i ${SITE.sted} og kører selv mange af dem i løb.</p>
+      <p class="indled" data-vis style="--i:2">${SITE.fornavn} er født i 1983 og har A1-licens som både træner og kusk. Han træner hestene hjemme i ${SITE.sted} og kører selv mange af dem i løb.</p>
       <p data-vis style="--i:3">Team Friis er Morten og holdets monterytter Tineke Borup – plus en flok unge og voksne, der hjælper til i stalden.</p>
       <dl class="nogle" data-vis style="--i:4">
         <div><dt>Sejre de seneste ${o.femAar.aar} sæsoner</dt><dd>${o.femAar.sejre}</dd></div>
@@ -692,7 +692,7 @@ ${sidehoved({
     <div class="prosa">
       ${etiket('Træneren', ' data-vis')}
       <h2 data-vis>Team Friis.</h2>
-      <p class="indled" data-vis>${SITE.person} træner travheste under navnet Team Friis fra stalden i ${SITE.sted} ved ${SITE.by} med Skive Trav som hjemmebane.</p>
+      <p class="indled" data-vis>${SITE.fornavn} træner travheste under navnet Team Friis fra stalden i ${SITE.sted} ved ${SITE.by} med Skive Trav som hjemmebane.</p>
       <p data-vis>Holdet består af Morten og monterytteren Tineke Borup – og en flok unge og voksne, der hjælper til i stalden og med andre opgaver.</p>
       <p data-vis>Lige nu står ${o.heste.length} heste på træningslisten – fra åringer til rutinerede løbsheste. Over de seneste ${o.femAar.aar} sæsoner har stalden vundet ${o.femAar.sejre} løb, og i ${o.saeson.aar} står stalden på ${o.saeson.sejre} sejre på ${o.saeson.starter} starter.</p>
       <h2 data-vis>Kusken.</h2>
