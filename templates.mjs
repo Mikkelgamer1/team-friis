@@ -242,7 +242,7 @@ const organisation = () => ({
   url: `${SITE.url}/`,
   telephone: tlfLink,
   email: SITE.email,
-  image: `${SITE.url}/assets/img/og.jpg`,
+  image: `${SITE.url}/assets/img/delebillede.jpg`,
   logo: `${SITE.url}/assets/img/emblem-480.webp`,
   sport: 'Travsport',
   address: { '@type': 'PostalAddress', streetAddress: SITE.gade, postalCode: SITE.postnr, addressLocality: SITE.by, addressCountry: 'DK' },
@@ -284,7 +284,7 @@ ${noindex ? '<meta name="robots" content="noindex">' : '<link rel="canonical" hr
 <meta property="og:title" content="${esc(titel)}">
 <meta property="og:description" content="${esc(beskrivelse)}">
 <meta property="og:url" content="${kanonisk}">
-<meta property="og:image" content="${SITE.url}/assets/img/og.jpg">
+<meta property="og:image" content="${SITE.url}/assets/img/delebillede.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Team Friis – travtræner Morten Friis, Skive">
