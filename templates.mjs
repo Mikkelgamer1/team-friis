@@ -507,6 +507,17 @@ const fbKort = (liste) => `
       </li>`).join('')}
     </ul>`;
 
+// Faste kort til profilerne – ingen indlejring fra Facebook, så ingen cookies og intet banner
+const FB_IKON = '<svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M13.4 21v-7.5h2.5l.4-2.9h-2.9V8.8c0-.8.2-1.4 1.4-1.4h1.6V4.8a20 20 0 0 0-2.3-.1c-2.3 0-3.8 1.4-3.8 3.9v2H7.8v2.9h2.5V21z" fill="currentColor"/></svg>';
+const IG_IKON = '<svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17" cy="7" r="1.2" fill="currentColor"/></svg>';
+const social = (href, ikon, navn, adresse, foto) => `
+      <a class="social" href="${href}" target="_blank" rel="noopener">
+        ${billede(foto, '', { sizes: '(min-width: 901px) 22vw, 46vw' })}
+        <span class="social__ikon">${ikon}</span>
+        <span><b>${navn}</b><small>${adresse}</small></span>
+        ${ud}${nyFane}
+      </a>`;
+
 const foelg = (fb = []) => (SITE.facebook || SITE.instagram || fb.length ? `
 <section class="sek sek--lys">
   <div class="wrap foelg">
@@ -514,16 +525,8 @@ const foelg = (fb = []) => (SITE.facebook || SITE.instagram || fb.length ? `
       ${etiket('Følg med', ' data-vis')}
       <h2 data-vis style="--i:1">Hverdagen hos Team Friis.</h2>
       <p data-vis style="--i:2">Startdage, sejre og livet i stalden deles løbende på ${[SITE.facebook && 'Facebook', SITE.instagram && 'Instagram'].filter(Boolean).join(' og ')}${fb.length ? ' – her er de seneste opslag' : ''}.</p>
-      <p class="valg" data-vis style="--i:3">
-        ${SITE.facebook ? ekstern(SITE.facebook, 'Team Friis på Facebook', 'knap knap--blaa') : ''}
-        ${SITE.instagram ? ekstern(SITE.instagram, 'Team Friis på Instagram', 'knap knap--kant') : ''}
-      </p>
     </div>
-    <div>
-      ${SITE.facebook && !fb.length ? `<div class="fb" data-fb="${SITE.facebook}">
-        <button class="knap knap--kant" type="button">Vis de seneste opslag ${pil}</button>
-        <p class="fb__note">Opslagene hentes fra Facebook og sætter cookies derfra.</p>
-      </div>` : ''}
+    <div class="sociale" data-vis style="--i:2">${SITE.facebook ? social(SITE.facebook, FB_IKON, 'Facebook', SITE.facebook.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, ''), 'traening-par') : ''}${SITE.instagram ? social(SITE.instagram, IG_IKON, 'Instagram', '@' + SITE.instagram.replace(/\/$/, '').split('/').pop(), 'fold-portraet') : ''}
     </div>
   </div>
   ${fb.length ? `<div class="wrap">${fbKort(fb)}</div>` : ''}

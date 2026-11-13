@@ -293,14 +293,17 @@ h3 { font-size: 1.2rem; }
 
 .foelg { display: grid; grid-template-columns: 1.1fr 1fr; gap: clamp(32px, 6vw, 96px); align-items: center; }
 .foelg h2 { margin-bottom: 14px; }
-.fb { margin-top: 0; }
-html:not(.js) .fb { display: none; }
-.fb__note { margin-top: 12px; font-size: .8rem; color: var(--daemp); }
-.fb iframe { display: block; width: 100%; max-width: 500px; height: 640px; border: 0; border-radius: var(--r); background: #fff; box-shadow: 0 20px 40px -24px rgba(11, 19, 36, .4); }
-.samtykke { position: fixed; inset: auto 16px 16px; z-index: 60; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px 32px; max-width: 980px; margin-inline: auto; padding: 18px 22px; border-radius: 18px; color: #fff; background: rgba(13, 21, 48, .92); backdrop-filter: blur(14px); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .12), 0 20px 50px -20px rgba(0, 0, 0, .6); }
-.samtykke p { max-width: 62ch; font-size: .9rem; color: var(--lys-tekst); }
-.samtykke div { display: flex; flex-wrap: wrap; gap: 10px; }
-.samtykke__nej { background: transparent; box-shadow: inset 0 0 0 1.5px rgba(255, 255, 255, .35); }
+/* Faste kort til Facebook og Instagram med et af staldens egne billeder bagved */
+.sociale { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.social { position: relative; isolation: isolate; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; gap: 36px; min-height: clamp(220px, 24vw, 320px); padding: clamp(18px, 2vw, 26px); border-radius: var(--r); background: var(--natt); color: #fff; box-shadow: 0 30px 60px -30px rgba(11, 19, 36, .6); transition: transform .4s var(--ease), box-shadow .4s var(--ease); }
+.social > img { position: absolute; inset: 0; z-index: -2; width: 100%; height: 100%; object-fit: cover; transition: scale .8s var(--ease); }
+.social::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(7, 11, 24, .1) 20%, rgba(7, 11, 24, .88)); }
+.social:hover { transform: translateY(-4px); box-shadow: 0 36px 70px -30px rgba(11, 19, 36, .7); }
+.social:hover > img { scale: 1.05; }
+.social__ikon { display: grid; place-items: center; width: 48px; height: 48px; border-radius: 50%; background: var(--grad); box-shadow: 0 10px 24px -8px rgba(37, 99, 235, .7); }
+.social b { display: block; font-size: clamp(1.15rem, 1.6vw, 1.4rem); font-weight: 800; font-stretch: 115%; }
+.social small { font-size: .84rem; color: var(--lys-tekst); overflow-wrap: anywhere; }
+.social .ud { position: absolute; top: clamp(18px, 2vw, 26px); right: clamp(18px, 2vw, 26px); width: 14px; height: 14px; }
 .fbkort { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; margin-top: 32px; }
 .fbkort a { display: flex; flex-direction: column; height: 100%; overflow: hidden; border-radius: 18px; background: #fff; box-shadow: 0 12px 30px -18px rgba(11, 19, 36, .35); transition: transform .3s var(--ease); }
 .fbkort a:hover { transform: translateY(-4px); }
