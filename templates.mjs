@@ -603,7 +603,7 @@ const forside = (o, data) => {
     </div>
     ${o.kortheste.length ? hestekort(o.kortheste) : ''}
     <h3 class="mini" data-vis>Mest vindende på listen</h3>
-    <div class="profiler">${o.heste.slice(0, 6).map(profilkort).join('')}
+    <div class="profiler">${[...o.heste].sort((a, b) => sejre(b) - sejre(a) || b.praemier - a.praemier).slice(0, 6).map(profilkort).join('')}
     </div>
     <p class="midt" data-vis>${knap('heste/', `Hele træningslisten (${o.heste.length})`, 'knap--glas')}</p>
   </div>
