@@ -40,6 +40,7 @@ Alt indhold står i `templates.mjs`: kontaktoplysninger i `SITE` øverst. Design
 | Født 1983, A1-licens, hjemmebane Skive Trav, adresse, telefon, løbsfarver (sort/blå/grøn) | Dansk Hestevæddeløb (licens 20245) |
 | Træningsliste, resultater, statistik | Dansk Hestevæddeløb, opdateres dagligt |
 | Skive Trav: åbnet 1948, Flyvej siden 1966, lysanlæg 2019–20 | skive-trav.dk/om-os |
+| Instagram: instagram.com/team_friis | Givet af Mikkel 13.11.2026 |
 | Team Friis, Lånum, e-mail, monterytter Tineke Borup | Facebook-siden facebook.com/Team.Friis (introduktion) |
 | Emblem, portræt, løbsfoto og hestekort | Team Friis' Facebook-side |
 | Slogan "Passion · Udvikling · Resultater" | Team Friis' egne grafikker på Facebook |

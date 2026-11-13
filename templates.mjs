@@ -15,7 +15,7 @@ export const SITE = {
   by: 'Stoholm',
   slogan: ['Passion', 'Udvikling', 'Resultater'], // fra Team Friis' egne grafikker
   facebook: 'https://www.facebook.com/Team.Friis', // opslag vises som kort, når FB_SIDE/FB_TOKEN er sat i GitHub
-  instagram: '', // ← profilens adresse, hvis stalden har en
+  instagram: 'https://www.instagram.com/team_friis/',
   travinfo: 'https://travinfo.dk/licenseholder-tabs/20245',
   hjemmebane: 'https://www.skive-trav.dk/',
   kort: 'https://www.google.com/maps/search/?api=1&query=Vittrupvej+19%2C+7850+Stoholm',
@@ -513,10 +513,10 @@ const foelg = (fb = []) => (SITE.facebook || SITE.instagram || fb.length ? `
     <div>
       ${etiket('Følg med', ' data-vis')}
       <h2 data-vis style="--i:1">Hverdagen hos Team Friis.</h2>
-      <p data-vis style="--i:2">Startdage, sejre og livet i stalden deles løbende på Facebook${fb.length ? ' – her er de seneste opslag' : ''}.</p>
+      <p data-vis style="--i:2">Startdage, sejre og livet i stalden deles løbende på ${[SITE.facebook && 'Facebook', SITE.instagram && 'Instagram'].filter(Boolean).join(' og ')}${fb.length ? ' – her er de seneste opslag' : ''}.</p>
       <p class="valg" data-vis style="--i:3">
         ${SITE.facebook ? ekstern(SITE.facebook, 'Team Friis på Facebook', 'knap knap--blaa') : ''}
-        ${SITE.instagram ? ekstern(SITE.instagram, 'Instagram', 'knap knap--kant') : ''}
+        ${SITE.instagram ? ekstern(SITE.instagram, 'Team Friis på Instagram', 'knap knap--kant') : ''}
       </p>
     </div>
     <div>
