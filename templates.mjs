@@ -523,7 +523,7 @@ const foelg = (fb = []) => (SITE.facebook || SITE.instagram || fb.length ? `
 // Løbsfarverne fra Dansk Hestevæddeløb ("Sort/blå/grøn/logo") som prikker på holdkortet
 const FARVER = { sort: '#04060c', 'blå': 'var(--blaa)', 'grøn': 'var(--groen)' };
 
-// 1.000 kuskesejre: travet.dk 12.11.2026 – nr. 1.000 kom med Kaos i Aalborg 11.11.2026 (bekræftet i Dansk Hestevæddeløbs kuskresultater)
+// Kuskesejre i karrieren: 1.000 nået 11.11.2026 (travet.dk 12.11.2026) og talt videre fra Dansk Hestevæddeløbs kuskresultater (build.mjs → kuskSejre)
 const forside = (o, data) => {
   const farver = data.traener.farver.split('/').filter((f) => FARVER[f.toLowerCase()]);
   return `
@@ -542,7 +542,7 @@ const forside = (o, data) => {
     </div>
     <figure class="holdkort">
       <div class="holdkort__foto">${billede('portraet', `${SITE.person} i løbsdragten`, { sizes: '(min-width: 901px) 350px, 104px', lazy: false })}<span>${esc(data.traener.licens)}-licens</span></div>
-      <p class="segl"><b>1.000</b><span>sejre som kusk</span><small>nov. 2026</small></p>
+      <p class="segl"><b>${nf(data.kuskSejre?.antal ?? 1000)}</b><span>sejre som kusk</span><small>i karrieren</small></p>
       <figcaption>
         <b>${SITE.person}</b>
         <span>Travtræner og kusk</span>

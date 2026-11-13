@@ -56,6 +56,19 @@ const flet = (nye, gamle = []) => {
   return [...nye, ...gamle.filter((r) => !set.has(r.id))].sort((a, b) => b.dato.localeCompare(a.dato) || b.loeb - a.loeb);
 };
 
+// Sejr nr. 1.000 som kusk: Kaos i Aalborg 11.11.2026, 5. løb (travet.dk 12.11.2026). Herfra tælles hver ny kuskesejr med.
+const KUSKSEJRE_START = { antal: 1000, til: '2026-11-11-05' };
+
+/** Løbets plads i tiden som tekst, der kan sammenlignes: "2026-11-11-06" */
+const loebsNoegle = (r) => `${r.raceInformation.date}-${String(r.raceInformation.raceNumber).padStart(2, '0')}`;
+
+/** Lægger kuskesejre efter den sidst talte til totalen, så tallet tæller videre, selv om API'et kun viser de seneste ca. 300 starter. */
+// ponytail: en sejr, der senere omgøres (fx diskvalifikation), bliver stående i totalen – ret KUSKSEJRE_START/data, hvis det sker.
+const kuskSejre = (raa, gemt = KUSKSEJRE_START) => {
+  const nye = raa.filter((r) => erStart(r) && r.placement.displayValue === '1').map(loebsNoegle).filter((n) => n > gemt.til).sort();
+  return nye.length ? { antal: gemt.antal + nye.length, til: nye.at(-1) } : gemt;
+};
+
 const tilStatistik = (svar) => svar.statistics.map((s) => ({
   aar: Number(s.year), starter: s.numberOfStarts, sejre: s.firstPlaces, toer: s.secondPlaces, treer: s.thirdPlaces,
   procent: tal(s.winningRates), praemier: tal(s.prizeMoney),
@@ -72,6 +85,7 @@ async function hentTravinfo(gammel) {
   const basis = await get(`/licenseholders/${L}/basicinformation`);
   const traenerStat = await get(`/licenseholders/trainers/${L}/statistics`);
   const kuskStat = await get(`/licenseholders/drivers/${L}/statistics`);
+  const kuskResultater = await get(`/licenseholders/drivers/${L}/results`);
   const resultater = await get(`/licenseholders/trainers/${L}/results`);
   const traeningsliste = await get(`/licenseholders/trainers/${L}/horses`);
   const kommende = await get(`/licenseholders/trainers/${L}/comingstarts`).catch(() => []);
@@ -100,6 +114,7 @@ async function hentTravinfo(gammel) {
     traener: { foedt: Number(basis.yearBorn), hjemmebane: basis.homeTrack, licens: basis.licenseInfo?.description, farver: basis.trotAdditionalInformation?.dress },
     traenerStatistik: tilStatistik(traenerStat),
     kuskStatistik: tilStatistik(kuskStat),
+    kuskSejre: kuskSejre(kuskResultater, gammel?.kuskSejre),
     heste,
     resultater: flet(resultater.filter(erStart).map(tilResultat), gammel?.resultater),
     kommende: kommende.map((k) => ({ dato: k.raceInformation.date, bane: k.track.code, loeb: k.raceInformation.raceNumber, hestId: k.horse.id, hest: paentNavn(k.horse.name), kusk: kuskNavn(k.driver?.name) })),
@@ -213,6 +228,10 @@ function test() {
   assert.equal(erStart(raa({ withdrawn: true })), false);
   assert.equal(erStart(raa({ raceType: { displayValue: 'k' } })), false);
   assert.equal(erStart(raa({ placement: { displayValue: '' } })), false);
+  const kr = (date, raceNumber, pl = '1') => raa({ placement: { displayValue: pl }, raceInformation: { date, raceNumber } });
+  assert.deepEqual(kuskSejre([kr('2026-11-13', 2, '7'), kr('2026-11-11', 6), kr('2026-11-11', 5)]), { antal: 1001, til: '2026-11-11-06' });
+  assert.deepEqual(kuskSejre([kr('2026-11-14', 10), kr('2026-11-11', 6)], { antal: 1001, til: '2026-11-11-06' }), { antal: 1002, til: '2026-11-14-10' });
+  assert.deepEqual(kuskSejre([], { antal: 1002, til: '2026-11-14-10' }), { antal: 1002, til: '2026-11-14-10' });
   const flettet = flet([{ id: 'a', dato: '2026-10-02', loeb: 1, ny: true }], [{ id: 'a', dato: '2026-10-02', loeb: 1 }, { id: 'b', dato: '2026-10-03', loeb: 4 }]);
   assert.deepEqual(flettet.map((r) => r.id), ['b', 'a']);
   assert.equal(flettet[1].ny, true);

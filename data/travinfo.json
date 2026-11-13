@@ -1,5 +1,5 @@
 {
- "opdateret": "2026-11-13T17:47:55.065Z",
+ "opdateret": "2026-11-13T17:50:50.535Z",
  "traener": {
   "foedt": 1983,
   "hjemmebane": "Skive Trav",
@@ -100,6 +100,10 @@
    "praemier": 1119696
   }
  ],
+ "kuskSejre": {
+  "antal": 1001,
+  "til": "2026-11-11-06"
+ },
  "heste": [
   {
    "id": 638223,
