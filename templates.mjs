@@ -576,7 +576,7 @@ const forside = (o, data) => {
 
 <section class="sek sek--lys">
   <div class="wrap traener">
-    <figure class="traener__foto" data-vis>${billede('i-loeb', 'Travhest og kusk i opløbet', { sizes: '(min-width: 901px) 34vw, 90vw' })}<figcaption><b>I opløbet</b>Foto: Team Friis' Facebook-side</figcaption></figure>
+    <figure class="traener__foto" data-vis>${billede('i-loeb', 'Travhest og kusk i opløbet', { sizes: '(min-width: 901px) 34vw, 90vw' })}<figcaption><b>I opløbet</b></figcaption></figure>
     <div>
       ${etiket('Træneren', ' data-vis')}
       <h2 data-vis style="--i:1">Manden bag Team Friis.</h2>
