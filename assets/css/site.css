@@ -1,4 +1,4 @@
-/* Team Friis – midnatsblå, stærk blå, cyan og grøn fra emblemet og løbsdragten. Glas, runde hjørner og brede, fede overskrifter. */
+/* Team Friis – midnatsblå, stærk blå, cyan og grøn fra løbsdragten. Glas, runde hjørner og brede, fede overskrifter. */
 
 @font-face { font-family: "Archivo"; src: url("../fonts/archivo.woff2") format("woff2"); font-weight: 100 900; font-stretch: 62% 125%; font-display: swap; }
 
@@ -85,11 +85,10 @@ h3 { font-size: 1.2rem; }
 .top { position: fixed; inset: 0 0 auto; z-index: 50; height: var(--top); color: #fff; background: linear-gradient(rgba(7, 11, 24, .75), rgba(7, 11, 24, 0)); transition: background .35s, box-shadow .35s; }
 .er-scrollet .top { background: rgba(7, 11, 24, .82); backdrop-filter: blur(14px) saturate(140%); box-shadow: 0 1px 0 var(--lys-linje); }
 .top__inner { display: flex; align-items: center; gap: 26px; height: 100%; }
-.maerke { display: inline-flex; align-items: center; gap: 12px; font-size: 1.15rem; font-weight: 600; font-stretch: 120%; text-transform: uppercase; letter-spacing: .03em; white-space: nowrap; }
-.maerke img { width: 46px; height: 46px; border-radius: 50%; box-shadow: 0 0 0 2px rgba(255, 255, 255, .25), 0 6px 18px rgba(37, 99, 235, .45); }
-.maerke b { font-weight: 900; }
-.maerke--stor { font-size: 1.5rem; }
-.maerke--stor img { width: 64px; height: 64px; }
+/* Navnetræk i ren tekst – "Friis" i løbsfarverne */
+.maerke { display: inline-flex; gap: .3em; font-size: 1.25rem; font-weight: 500; font-stretch: 112%; text-transform: uppercase; letter-spacing: .01em; white-space: nowrap; }
+.maerke b { font-weight: 900; font-stretch: 125%; background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.maerke--stor { font-size: 1.6rem; }
 .top__logo { margin-right: auto; }
 .top__nav { display: flex; gap: clamp(18px, 2vw, 32px); }
 .top__nav a { position: relative; padding-block: 6px; font-size: .94rem; font-weight: 600; color: rgba(255, 255, 255, .82); transition: color .2s; }
@@ -130,8 +129,25 @@ h3 { font-size: 1.2rem; }
 .hero__slogan { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 22px; }
 .hero__slogan span { padding: 6px 14px; border-radius: 999px; background: rgba(255, 255, 255, .1); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .2); backdrop-filter: blur(8px); font-size: .82rem; font-weight: 700; font-stretch: 110%; letter-spacing: .08em; text-transform: uppercase; }
 .hero__indled { max-width: 50ch; font-size: clamp(1.05rem, 1.35vw, 1.2rem); color: var(--lys-tekst); }
-.emblem { justify-self: end; width: min(100%, 400px); margin: 0; border-radius: 50%; filter: drop-shadow(0 30px 60px rgba(37, 99, 235, .55)); }
-.emblem img { width: 100%; height: auto; }
+/* Holdkortet: portræt og officielle oplysninger som et spillerkort, der retter sig op ved hover */
+.holdkort { position: relative; justify-self: end; width: min(100%, 350px); margin: 0; padding: 10px; border-radius: 28px; background: rgba(13, 21, 48, .6); backdrop-filter: blur(16px) saturate(140%); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .14), 0 50px 90px -30px rgba(0, 0, 0, .85); rotate: 2.5deg; transition: rotate .6s var(--ease); }
+.holdkort:hover { rotate: 0deg; }
+.holdkort__foto { position: relative; overflow: hidden; aspect-ratio: 1 / 1.05; border-radius: 20px; }
+.holdkort__foto img { width: 100%; height: 100%; object-fit: cover; object-position: 60% 30%; scale: 1.05; }
+.holdkort__foto span { position: absolute; top: 12px; left: 12px; padding: 6px 12px; border-radius: 999px; background: rgba(7, 11, 24, .72); backdrop-filter: blur(8px); font-size: .66rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+.holdkort figcaption { padding: 18px 12px 8px; }
+.holdkort figcaption > b { display: block; font-size: 1.7rem; font-weight: 900; font-stretch: 125%; line-height: 1; letter-spacing: -.01em; text-transform: uppercase; }
+.holdkort figcaption > span { display: block; margin-top: 6px; font-size: .7rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--cyan); }
+.holdkort dl { display: grid; grid-template-columns: auto auto auto; justify-content: space-between; gap: 12px; margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--lys-linje); }
+.holdkort dt { font-size: .6rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--lys-daemp); }
+.holdkort dd { font-size: .95rem; font-weight: 700; }
+.farver { display: flex; gap: 4px; padding-top: 5px; }
+.farver i { width: 16px; height: 16px; border-radius: 50%; background: var(--f); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .35); }
+/* Seglet for de 1.000 kuskesejre på kortets hjørne */
+.segl { position: absolute; top: -34px; right: -34px; z-index: 2; display: grid; place-content: center; justify-items: center; width: 140px; aspect-ratio: 1; margin: 0; border: 3px solid transparent; border-radius: 50%; background: radial-gradient(circle at 30% 25%, #16224a, var(--natt) 72%) padding-box, var(--grad) border-box; box-shadow: 0 22px 44px -12px rgba(0, 0, 0, .75), 0 0 0 7px rgba(7, 11, 24, .4); text-align: center; line-height: 1; rotate: -2.5deg; }
+.segl b { font-size: 1.8rem; font-weight: 900; font-stretch: 125%; letter-spacing: -.03em; background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.segl span { margin-top: 7px; font-size: .56rem; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
+.segl small { margin-top: 5px; font-size: .54rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--lys-daemp); }
 
 /* Sæsonens tal i et glaskort, der ligger hen over heltens nederste kant */
 .tal { position: relative; z-index: 2; margin-top: -86px; }
@@ -409,7 +425,6 @@ html:not(.js) .fb { display: none; }
 /* ---------- bevægelse ---------- */
 
 @keyframes op { from { opacity: 0; transform: translateY(18px); } }
-@keyframes svaev { 50% { transform: translateY(-10px); } }
 .js [data-vis] { opacity: 0; transform: translateY(22px); transition: opacity .8s var(--ease), transform .8s var(--ease); transition-delay: calc(var(--i, 0) * 80ms); }
 .js [data-vis].ses { opacity: 1; transform: none; }
 .hero__tekst > * { animation: op .9s var(--ease) both; }
@@ -417,7 +432,9 @@ html:not(.js) .fb { display: none; }
 .hero__tekst > :nth-child(3) { animation-delay: .16s; }
 .hero__tekst > :nth-child(4) { animation-delay: .24s; }
 .hero__tekst > :nth-child(5) { animation-delay: .32s; }
-.emblem { animation: op 1s var(--ease) .3s both, svaev 7s ease-in-out 1.4s infinite; }
+.holdkort { animation: op 1s var(--ease) .3s both; }
+.segl { animation: segl .8s cubic-bezier(.3, 1.5, .5, 1) 1.1s both; }
+@keyframes segl { from { scale: .3; opacity: 0; } }
 .tal__kort { animation: op .9s var(--ease) .4s both; }
 
 @media (prefers-reduced-motion: reduce) {
@@ -444,7 +461,17 @@ html:not(.js) .fb { display: none; }
   .hero { min-height: auto; padding-bottom: 120px; }
   .hero::before { background: linear-gradient(0deg, rgba(7, 11, 24, .95) 10%, rgba(7, 11, 24, .45) 70%, rgba(7, 11, 24, .6)); }
   .hero__gitter, .traener, .duo, .resgitter, .tabeller, .cta__inner, .artikel, .partnere, .foelg, .sekhoved { grid-template-columns: 1fr; }
-  .emblem { justify-self: start; width: min(56%, 260px); order: -1; }
+  .holdkort { display: grid; grid-template-columns: 104px 1fr; align-items: center; gap: 4px; justify-self: stretch; width: 100%; margin-top: 8px; rotate: 0deg; }
+  .holdkort__foto { aspect-ratio: 1; border-radius: 18px; }
+  .holdkort__foto span { display: none; }
+  .holdkort figcaption { padding: 4px 8px 4px 12px; }
+  .holdkort figcaption > b { font-size: 1.15rem; }
+  .holdkort dl { margin-top: 10px; padding-top: 10px; gap: 8px; }
+  .holdkort dd { font-size: .82rem; }
+  .segl { top: -100px; right: 6px; width: 100px; border-width: 2px; rotate: 0deg; }
+  .segl b { font-size: 1.3rem; }
+  .segl span { font-size: .5rem; letter-spacing: .12em; }
+  .segl small { display: none; }
   .ydelser, .partnere__liste { grid-template-columns: 1fr; }
   .galleri { grid-template-columns: 1fr 1fr; grid-auto-rows: clamp(140px, 36vw, 220px); }
   .galleri li:nth-child(6) { grid-column: auto; }
@@ -457,8 +484,7 @@ html:not(.js) .fb { display: none; }
   .kontakt { grid-template-columns: 1fr; }
 }
 @media (max-width: 560px) {
-  .maerke { font-size: 1rem; }
-  .maerke img { width: 40px; height: 40px; }
+  .maerke { font-size: 1.08rem; }
   .tal dl { grid-template-columns: repeat(2, auto); }
   .nogle { grid-template-columns: 1fr 1fr; }
   .nogle div:last-child { grid-column: 1 / -1; }

@@ -43,4 +43,5 @@ Alt indhold står i `templates.mjs`: kontaktoplysninger i `SITE` øverst. Design
 | Team Friis, Lånum, e-mail, monterytter Tineke Borup | Facebook-siden facebook.com/Team.Friis (introduktion) |
 | Emblem, portræt, løbsfoto og hestekort | Team Friis' Facebook-side |
 | Slogan "Passion · Udvikling · Resultater" | Team Friis' egne grafikker på Facebook |
+| 1.000 sejre som kusk (nr. 1.000 med Kaos, Aalborg 11.11.2026) | travet.dk 12.11.2026: "Morten Friis: Fra jockeyernes førertrøje til 1.000 sejre" + Dansk Hestevæddeløbs kuskresultater |
 | Samarbejdspartnere: KRAFFT og reron Fibertech | Logoer på Mortens løbsdragt; reronfibertech.dk |

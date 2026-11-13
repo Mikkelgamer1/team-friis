@@ -134,7 +134,7 @@ function afled(data, idag) {
 
 // ---------- fælles dele ----------
 
-const maerke = (cls = '') => `<span class="maerke ${cls}"><img src="${R}assets/img/emblem-480.webp" width="480" height="480" alt=""><span>Team <b>Friis</b></span></span>`;
+const maerke = (cls = '') => `<span class="maerke ${cls}">Team <b>Friis</b></span>`;
 
 const top = (sti) => `
 <header class="top${sti === '' ? ' top--hero' : ''}">
@@ -520,7 +520,13 @@ const foelg = (fb = []) => (SITE.facebook || SITE.instagram || fb.length ? `
 
 // ---------- sider ----------
 
-const forside = (o) => `
+// Løbsfarverne fra Dansk Hestevæddeløb ("Sort/blå/grøn/logo") som prikker på holdkortet
+const FARVER = { sort: '#04060c', 'blå': 'var(--blaa)', 'grøn': 'var(--groen)' };
+
+// 1.000 kuskesejre: travet.dk 12.11.2026 – nr. 1.000 kom med Kaos i Aalborg 11.11.2026 (bekræftet i Dansk Hestevæddeløbs kuskresultater)
+const forside = (o, data) => {
+  const farver = data.traener.farver.split('/').filter((f) => FARVER[f.toLowerCase()]);
+  return `
 <section class="hero">
   <picture class="hero__foto">
     <source media="(max-aspect-ratio: 1/1)" srcset="${R}assets/img/hero-mobil-700.webp 700w, ${R}assets/img/hero-mobil-1100.webp 1100w" sizes="100vw">
@@ -534,7 +540,19 @@ const forside = (o) => `
       <p class="hero__indled">Professionel travtræner og kusk med Skive Trav som hjemmebane. Stalden ligger i ${SITE.sted} ved ${SITE.by} og har ${o.heste.length} heste i træning.</p>
       <p class="valg">${knap('kontakt/', 'Kontakt Morten')} ${knap('heste/', 'Se hestene', 'knap--glas')}</p>
     </div>
-    <figure class="emblem">${billede('emblem', 'Team Friis-emblemet: Morten Friis, travtræner', { sizes: '(min-width: 901px) 30vw, 60vw', lazy: false })}</figure>
+    <figure class="holdkort">
+      <div class="holdkort__foto">${billede('portraet', `${SITE.person} i løbsdragten`, { sizes: '(min-width: 901px) 350px, 104px', lazy: false })}<span>${esc(data.traener.licens)}-licens</span></div>
+      <p class="segl"><b>1.000</b><span>sejre som kusk</span><small>nov. 2026</small></p>
+      <figcaption>
+        <b>${SITE.person}</b>
+        <span>Travtræner og kusk</span>
+        <dl>
+          <div><dt>Født</dt><dd>${data.traener.foedt}</dd></div>
+          <div><dt>Hjemmebane</dt><dd>${esc(data.traener.hjemmebane)}</dd></div>${farver.length ? `
+          <div><dt>Løbsfarver</dt><dd class="farver">${farver.map((f) => `<i style="--f:${FARVER[f.toLowerCase()]}"></i>`).join('')}<span class="sr">${dkListe(farver)}</span></dd></div>` : ''}
+        </dl>
+      </figcaption>
+    </figure>
   </div>
 </section>
 
@@ -558,7 +576,7 @@ const forside = (o) => `
 
 <section class="sek sek--lys">
   <div class="wrap traener">
-    <figure class="traener__foto" data-vis>${billede('portraet', 'Morten Friis i løbsdragten', { sizes: '(min-width: 901px) 34vw, 90vw' })}<figcaption><b>Morten Friis</b>Træner og kusk · A1-licens</figcaption></figure>
+    <figure class="traener__foto" data-vis>${billede('i-loeb', 'Travhest og kusk i opløbet', { sizes: '(min-width: 901px) 34vw, 90vw' })}<figcaption><b>I opløbet</b>Foto: Team Friis' Facebook-side</figcaption></figure>
     <div>
       ${etiket('Træneren', ' data-vis')}
       <h2 data-vis style="--i:1">Manden bag Team Friis.</h2>
@@ -646,6 +664,7 @@ const forside = (o) => `
 ${partnere()}
 ${foelg(o.fb)}
 ${kontaktbaand()}`;
+};
 
 const omMorten = (o, data) => `
 ${sidehoved({
@@ -914,7 +933,7 @@ export function sider(data, { v, idag, kort }) {
       titel: `${SITE.navn} – travtræner ${SITE.person}, Skive`,
       beskrivelse: `${SITE.person} og Team Friis: professionel travtræning med Skive Trav som hjemmebane. ${o.heste.length} heste i træning i ${SITE.sted} ved ${SITE.by}.`,
       klasse: 'forside',
-      indhold: forside(o),
+      indhold: forside(o, data),
     })),
     side('om-morten/', () => ({
       titel: `Om ${SITE.person} – travtræner og kusk | ${SITE.navn}`,
