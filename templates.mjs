@@ -670,7 +670,7 @@ const omMorten = (o, data) => `
 ${sidehoved({
   sti: 'Om Morten',
   h1: 'Morten Friis',
-  tekst: `Professionel travtræner og kusk med ${esc(data.traener.licens)}-licens og manden bag Team Friis. Født i ${data.traener.foedt} – med Skive Trav som hjemmebane og stald i ${SITE.sted}.`,
+  tekst: `Professionel travtræner og kusk med ${esc(data.traener.licens)}-licens. Født i ${data.traener.foedt} – med Skive Trav som hjemmebane og stald i ${SITE.sted}.`,
   foto: 'traening-jog',
   pos: '50% 60%',
   chips: [[o.femAar.sejre, `sejre de seneste ${o.femAar.aar} sæsoner`], [o.heste.length, 'heste i træning'], ['A1', 'licens']],
@@ -937,7 +937,7 @@ export function sider(data, { v, idag, kort }) {
     })),
     side('om-morten/', () => ({
       titel: `Om ${SITE.person} – travtræner og kusk | ${SITE.navn}`,
-      beskrivelse: `Mød ${SITE.person}: professionel travtræner og kusk med A1-licens, manden bag Team Friis i ${SITE.sted} med Skive Trav som hjemmebane.`,
+      beskrivelse: `Mød ${SITE.person}: professionel travtræner og kusk med A1-licens hos Team Friis i ${SITE.sted} med Skive Trav som hjemmebane.`,
       indhold: omMorten(o, data),
     })),
     side('stalden/', () => ({
