@@ -1,5 +1,5 @@
 {
- "opdateret": "2026-11-12T12:36:35.521Z",
+ "opdateret": "2026-11-13T12:07:17.369Z",
  "traener": {
   "foedt": 1983,
   "hjemmebane": "Skive Trav",
@@ -3854,6 +3854,14 @@
    "loeb": 6,
    "hestId": 653138,
    "hest": "Lærke D",
+   "kusk": "Morten Friis"
+  },
+  {
+   "dato": "2026-11-18",
+   "bane": "Ål",
+   "loeb": 1,
+   "hestId": 656994,
+   "hest": "Master K",
    "kusk": "Morten Friis"
   }
  ]
