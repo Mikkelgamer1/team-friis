@@ -751,7 +751,6 @@ ${sidehoved({
         ${etiket('Hverdagen', ' data-vis')}
         <h2 data-vis style="--i:1">Træning og fritid.</h2>
       </div>
-      <p data-vis style="--i:2">Billeder fra Team Friis' Facebook-side.</p>
     </div>
     ${galleri()}
   </div>
