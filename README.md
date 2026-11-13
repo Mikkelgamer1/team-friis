@@ -45,4 +45,7 @@ Alt indhold står i `templates.mjs`: kontaktoplysninger i `SITE` øverst. Design
 | Emblem, portræt, løbsfoto og hestekort | Team Friis' Facebook-side |
 | Slogan "Passion · Udvikling · Resultater" | Team Friis' egne grafikker på Facebook |
 | Sejre som kusk i karrieren (seglet på forsiden) | 1.000 nået med Kaos i Aalborg 11.11.2026 (travet.dk 12.11.2026: "Morten Friis: Fra jockeyernes førertrøje til 1.000 sejre"); hver ny sejr lægges til fra Dansk Hestevæddeløbs kuskresultater ved den daglige opdatering |
+| Tidslinjen på Om-siden: landschampion for jockeyer 2004–2008 (46, 62, 45, 49, 59 sejre) | Travsportens Hall of Fame: thof.dk/media/2186/landschampionater-2018.pdf |
+| Tidslinjen: storløb med Politiken, Amalie Bork og Hokita; 20 og 17 sejre med Morten som kusk | Dansk Hestevæddeløbs resultater for hestene med officielle løbsnavne (tjekket 13.11.2026) |
+| Tidslinjen: Taroks Mindeløb med Flik Flak 2004 og 2006 | travet.dk 12.11.2026; sejrene (Charlottenlund 31.10.2004 og 29.10.2006) står i Dansk Hestevæddeløbs data uden løbsnavn |
 | Samarbejdspartnere: KRAFFT og reron Fibertech | Logoer på Mortens løbsdragt; reronfibertech.dk |

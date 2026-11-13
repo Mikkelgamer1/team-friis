@@ -680,6 +680,48 @@ ${foelg(o.fb)}
 ${kontaktbaand()}`;
 };
 
+// Karrieren i årstal. Mesterskaberne: Travsportens Hall of Fame (thof.dk, landschampionater-2018.pdf).
+// Løbene: Dansk Hestevæddeløbs resultater for hestene med officielle løbsnavne (tjekket 13.11.2026). Flik Flaks sejre
+// på Charlottenlund 31.10.2004 og 29.10.2006 står uden løbsnavn i de gamle data – travet.dk (12.11.2026) navngiver dem som Taroks Mindeløb.
+const MESTERSKABER = [[2004, 46], [2005, 62], [2006, 45], [2007, 49], [2008, 59]];
+const KARRIERE = [
+  { aar: '2010–2014', titel: 'Politiken', tekst: '20 sejre sammen med Morten i sulkyen – heriblandt fire storløb.', loeb: ['Taroks Mindeløb 2010', 'Grand Circle 3-års Championat 2010', 'Grand Circle 4-års Championat 2011', 'Harald Lunds Mindeløb 2014'] },
+  { aar: '2014–2017', titel: 'Amalie Bork', tekst: '17 sejre sammen – fra hun var 2 år, til hun var 5.', loeb: ['Mark Ingdams Mindeløb 2014', 'Dansk Opdrætningsløb 2014', 'Jydsk 3-årings Hoppe Grand Prix 2015', 'Grand Circle 4-års Championat for hopper 2016', 'DM for 5-årige hopper 2017'] },
+  { aar: '2026', titel: 'Taroks Mindeløb igen', tekst: '22 år efter den første sejr i løbet vandt Morten Taroks Mindeløb 2026 for hopper med Hokita på Charlottenlund i 1.13,1.', loeb: [] },
+];
+
+const tidslinje = (data) => {
+  const max = Math.max(...MESTERSKABER.map(([, n]) => n));
+  const antal = data.kuskSejre?.antal ?? 1000;
+  const punkt = (i, aar, indhold, cls = '') => `
+      <li data-vis style="--i:${i}"><span class="tidslinje__aar">${aar}</span><div class="tidslinje__kort${cls}">${indhold}
+      </div></li>`;
+  return `
+<section class="sek sek--lys">
+  <div class="wrap">
+    <div class="sekhoved">
+      <div>
+        ${etiket('Karrieren', ' data-vis')}
+        <h2 data-vis style="--i:1">Fem mesterskaber og ${nf(Math.floor(antal / 1000) * 1000)} sejre.</h2>
+      </div>
+      <p data-vis style="--i:2">Udvalgte højdepunkter fra mere end 20 år i sulkyen.</p>
+    </div>
+    <ol class="tidslinje">${punkt(0, '2004–2008', `
+        <h3>Landschampion blandt jockeyerne fem år i træk</h3>
+        <p>${MESTERSKABER.reduce((s, [, n]) => s + n, 0)} sejre på fem sæsoner – og undervejs to sejre i Taroks Mindeløb med Flik Flak, i 2004 og 2006.</p>
+        <div class="mestre" role="img" aria-label="Sejre som jockey: ${MESTERSKABER.map(([aar, n]) => `${aar}: ${n}`).join(', ')}">${MESTERSKABER.map(([aar, n], k) => `<div style="--h:${Math.round((n / max) * 100)}%;--n:${k}"${n === max ? ' class="mestre__bedst"' : ''}><b>${n}</b><i></i><span>${aar}</span></div>`).join('')}</div>`)}${KARRIERE.map((p, k) => punkt(k + 1, p.aar, `
+        <h3>${p.titel}</h3>
+        <p>${p.tekst}</p>${p.loeb.length ? `
+        <ul class="loebsliste">${p.loeb.map((l) => `<li>${l}</li>`).join('')}</ul>` : ''}`)).join('')}${punkt(KARRIERE.length + 1, 'I dag', `
+        <b class="tidslinje__tal">${nf(antal)}</b>
+        <h3>sejre som kusk</h3>
+        <p>Sejr nr. 1.000 kom med Kaos i Aalborg den 11. november 2026.</p>`, ' tidslinje__kort--stor')}
+    </ol>
+    <p class="note" data-vis>Kilder: Travsportens Hall of Fame (landschampionater), Dansk Hestevæddeløbs løbsresultater og travet.dk.</p>
+  </div>
+</section>`;
+};
+
 const omMorten = (o, data) => `
 ${sidehoved({
   sti: 'Om Morten',
@@ -732,6 +774,7 @@ ${sidehoved({
     </div>
   </div>
 </section>
+${tidslinje(data)}
 ${partnere()}
 ${kontaktbaand()}`;
 
