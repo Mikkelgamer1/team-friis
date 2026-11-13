@@ -110,8 +110,12 @@ function afled(data, idag) {
   const kusk = data.kuskStatistik.find((s) => s.aar === saeson.aar) ?? data.kuskStatistik[0];
   const iAar = data.resultater.filter((r) => r.dato.startsWith(String(saeson.aar)));
   const prNavn = {};
-  for (const r of iAar) (prNavn[bane(r.bane)] ??= { kode: r.bane, navn: bane(r.bane), antal: 0 }).antal++;
-  const banetal = Object.values(prNavn).sort((a, b) => b.antal - a.antal);
+  for (const r of iAar) {
+    const b = (prNavn[bane(r.bane)] ??= { kode: r.bane, navn: bane(r.bane), antal: 0, sejre: 0 });
+    b.antal++;
+    if (r.placering === '1') b.sejre++;
+  }
+  const banetal = Object.values(prNavn).sort((a, b) => b.sejre - a.sejre || b.antal - a.antal);
   const traenerAar = data.traenerStatistik.filter((s) => s.starter > 0);
   return {
     heste,
@@ -123,7 +127,6 @@ function afled(data, idag) {
     banetal,
     banerIAar: [...banetal.filter((b) => b.navn !== 'Udlandet').map((b) => b.navn), ...(prNavn.Udlandet ? ['udenlandske baner'] : [])],
     svenske: banetal.filter((b) => SVENSKE.includes(b.kode)).map((b) => b.navn),
-    hjemmestarter: prNavn[bane(HJEM)]?.antal ?? 0,
     ungheste: heste.filter((h) => h.alder <= 2),
     aldre: [Math.min(...heste.map((h) => h.alder)), Math.max(...heste.map((h) => h.alder))],
     femAar: { aar: traenerAar.length, sejre: traenerAar.reduce((s, x) => s + x.sejre, 0), starter: traenerAar.reduce((s, x) => s + x.starter, 0), fra: traenerAar.at(-1)?.aar },
@@ -318,8 +321,8 @@ const sidehoved = ({ sti, h1, tekst, foto, pos = '50% 50%', chips = [] }) => `
 </section>`;
 
 /**
- * Skematisk Danmarkskort. `punkter` er [{ kode, navn, antal? }]: med antal tegnes en boble med tallet i,
- * uden antal en lille prik. Hjemmebanen får en ring, og der tegnes linjer derfra til de andre baner.
+ * Skematisk Danmarkskort. `punkter` er [{ kode, navn, antal?, sejre? }]: med antal tegnes en boble, hvis størrelse følger
+ * antal starter, med antal sejre i; uden antal en lille prik. Hjemmebanen får en ring.
  */
 function danmarkskort(punkter, beskrivelse) {
   const { bredde, hoejde, lon0, lat1, kx, ky, sti } = KORT;
@@ -330,30 +333,26 @@ function danmarkskort(punkter, beskrivelse) {
     return { ...p, x: +((lon - lon0) * kx).toFixed(1), y: +((lat1 - lat) * ky).toFixed(1), r, ydre: p.kode === HJEM ? r + (p.antal ? 4 : 6) : r };
   });
   const hjem = vist.find((p) => p.kode === HJEM);
-  const ruter = hjem ? vist.filter((p) => p !== hjem) : [];
 
-  // Navnet sættes dér, hvor det bedst holder sig inden for kortet og fri af ruter og andre baner.
+  // Navnet sættes dér, hvor det bedst holder sig inden for kortet og fri af andre baner.
   const navn = (p) => {
     const w = p.navn.length * 6.4, m = p.ydre + 6;
     const steder = [['start', p.x + m, p.y + 3.7], ['middle', p.x, p.y + m + 9], ['end', p.x - m, p.y + 3.7], ['end', Math.min(p.x + p.ydre, bredde - 4), p.y + m + 9], ['middle', p.x, p.y - m - 2]];
-    const straf = ([anker, x, y]) => { // 100 for at stikke ud over kortet, 10 for at ramme en rute eller en anden bane
+    const straf = ([anker, x, y]) => { // 100 for at stikke ud over kortet, 10 for at ramme en anden bane
       const x0 = (anker === 'start' ? x : anker === 'end' ? x - w : x - w / 2) - 3, x1 = x0 + w + 6, y0 = y - 12, y1 = y + 4;
       const inde = (px, py, luft = 0) => px > x0 - luft && px < x1 + luft && py > y0 - luft && py < y1 + luft;
       const udenfor = x0 < 0 || x1 > bredde || y0 < 0 || y1 > hoejde;
-      const rammer = vist.some((q) => q !== p && inde(q.x, q.y, q.ydre))
-        || ruter.some((q) => { for (let t = 0; t <= 1; t += 0.02) if (inde(hjem.x + (q.x - hjem.x) * t, hjem.y + (q.y - hjem.y) * t)) return true; return false; });
+      const rammer = vist.some((q) => q !== p && inde(q.x, q.y, q.ydre));
       return (udenfor ? 100 : 0) + (rammer ? 10 : 0);
     };
-    // Hjemmebanen helst til venstre, uden for viften af ruter. Ved lige straf vinder det første sted på listen.
+    // Hjemmebanen helst til venstre. Ved lige straf vinder det første sted på listen.
     const [anker, x, y] = (p === hjem ? [steder[2], ...steder] : steder).map((sted, i) => [straf(sted) + i / 100, sted]).sort((a, b) => a[0] - b[0])[0][1];
     return `<text class="kort__navn" x="${+x.toFixed(1)}" y="${+y.toFixed(1)}" text-anchor="${anker}">${esc(p.navn)}</text>`;
   };
 
   return `<svg class="kort__svg" viewBox="0 0 ${bredde} ${hoejde}" role="img" aria-label="${esc(beskrivelse)}">
-        <defs><linearGradient id="rute" x1="0" x2="1"><stop offset="0" stop-color="#4f8bff"/><stop offset="1" stop-color="#4cc46a"/></linearGradient></defs>
-        <path class="kort__land" d="${sti}"/>${ruter.map((p, i) => `
-        <path class="kort__rute" pathLength="1" d="M${hjem.x},${hjem.y}L${p.x},${p.y}" style="--n:${i}"/>`).join('')}${vist.map((p, i) => `
-        <g class="kort__bane" style="--n:${i}">${p === hjem ? `<circle class="kort__ring" cx="${p.x}" cy="${p.y}" r="${p.ydre}"/>` : ''}<circle class="kort__prik" cx="${p.x}" cy="${p.y}" r="${p.r}"/>${p.antal ? `<text class="kort__tal" x="${p.x}" y="${+(p.y + 3.3).toFixed(1)}" text-anchor="middle">${p.antal}</text>` : ''}${navn(p)}</g>`).join('')}
+        <path class="kort__land" d="${sti}"/>${vist.map((p, i) => `
+        <g class="kort__bane" style="--n:${i}">${p === hjem ? `<circle class="kort__ring" cx="${p.x}" cy="${p.y}" r="${p.ydre}"/>` : ''}<circle class="kort__prik" cx="${p.x}" cy="${p.y}" r="${p.r}"/>${p.antal ? `<text class="kort__tal" x="${p.x}" y="${+(p.y + 3.3).toFixed(1)}" text-anchor="middle">${p.sejre ?? p.antal}</text>` : ''}${navn(p)}</g>`).join('')}
       </svg>`;
 }
 
@@ -460,10 +459,21 @@ const galleri = (n = 8) => {
     </ul>`;
 };
 
+const sejreTekst = (n) => `${n} ${n === 1 ? 'sejr' : 'sejre'}`;
+
+/** Hjemmebanen og – hvis det er en anden – banen med flest sejre i år. */
+const baneTekst = (o) => {
+  const hjem = o.banetal.find((b) => b.kode === HJEM), top = o.banetal[0];
+  if (!hjem) return 'Skive Trav er hjemmebanen.';
+  return top !== hjem && top.sejre > hjem.sejre
+    ? `Skive Trav er hjemmebanen med ${hjem.antal} starter i ${o.saeson.aar} – men flest sejre kommer i ${top.navn}: ${sejreTekst(top.sejre)} på ${top.antal} starter.`
+    : `Skive Trav er hjemmebanen – og her kommer også flest sejre: ${sejreTekst(hjem.sejre)} på ${hjem.antal} starter i ${o.saeson.aar}.`;
+};
+
 const banebjaelker = (banetal) => {
-  const max = Math.max(1, ...banetal.map((b) => b.antal));
+  const max = Math.max(1, ...banetal.map((b) => b.sejre));
   return `<ul class="baner">${banetal.map((b) => `
-        <li style="--w:${Math.round((b.antal / max) * 100)}%"><span>${esc(b.navn)}</span><b>${b.antal}</b></li>`).join('')}
+        <li style="--w:${Math.round((b.sejre / max) * 100)}%"><span>${esc(b.navn)}</span><em>${b.antal} starter · ${Math.round((b.sejre / b.antal) * 100)} %</em><b>${sejreTekst(b.sejre)}</b></li>`).join('')}
       </ul>`;
 };
 
@@ -652,12 +662,12 @@ const forside = (o, data) => {
     <div>
       ${etiket('Banerne', ' data-vis')}
       <h2 data-vis style="--i:1">Hjemme i Skive – ude i hele landet.</h2>
-      <p class="indled" data-vis style="--i:2">Skive Trav er hjemmebanen${o.hjemmestarter ? `, hvor stalden har haft ${o.hjemmestarter} starter i ${o.saeson.aar}` : ''}.</p>
+      <p class="indled" data-vis style="--i:2">${baneTekst(o)}</p>
       <div data-vis style="--i:3">${banebjaelker(o.banetal)}</div>
     </div>
     <figure class="kort" data-vis style="--i:2">
-      ${danmarkskort(o.banetal, `Danmarkskort med staldens starter pr. bane i ${o.saeson.aar}: ${o.banetal.map((b) => `${b.navn} ${b.antal}`).join(', ')}.`)}
-      <figcaption>Starter pr. dansk bane i ${o.saeson.aar}. Ringen markerer hjemmebanen.</figcaption>
+      ${danmarkskort(o.banetal, `Danmarkskort med staldens sejre og starter pr. bane i ${o.saeson.aar}: ${o.banetal.map((b) => `${b.navn} ${sejreTekst(b.sejre)} på ${b.antal} starter`).join(', ')}.`)}
+      <figcaption>Sejre pr. dansk bane i ${o.saeson.aar}. Boblens størrelse viser antal starter, og ringen markerer hjemmebanen.</figcaption>
     </figure>
   </div>
 </section>
@@ -761,14 +771,14 @@ ${sidehoved({
     <div>
       ${etiket('Hjemmebanen', ' data-vis')}
       <h2 data-vis style="--i:1">Skive Trav.</h2>
-      <p class="indled" data-vis style="--i:2">Skive Trav er staldens hjemmebane${o.hjemmestarter ? ` – i ${o.saeson.aar} har stalden haft ${o.hjemmestarter} starter her` : ''}.</p>
+      <p class="indled" data-vis style="--i:2">${baneTekst(o)}</p>
       <p data-vis style="--i:3">Banen åbnede i 1948 som Nordvestjysk Væddeløbsbane og har ligget på Flyvej i Skive siden 1966. Et lysanlæg fra 2019–20 gør det muligt at køre løb hele vinteren.</p>
       <div data-vis style="--i:4">${banebjaelker(o.banetal)}</div>
       <p class="valg" data-vis style="--i:5">${ekstern(SITE.hjemmebane, 'skive-trav.dk')}</p>
     </div>
     <figure class="kort" data-vis style="--i:2">
-      ${danmarkskort(o.banetal, `Danmarkskort med staldens starter pr. bane i ${o.saeson.aar}: ${o.banetal.map((b) => `${b.navn} ${b.antal}`).join(', ')}.`)}
-      <figcaption>Starter pr. dansk bane i ${o.saeson.aar}. Ringen markerer hjemmebanen.</figcaption>
+      ${danmarkskort(o.banetal, `Danmarkskort med staldens sejre og starter pr. bane i ${o.saeson.aar}: ${o.banetal.map((b) => `${b.navn} ${sejreTekst(b.sejre)} på ${b.antal} starter`).join(', ')}.`)}
+      <figcaption>Sejre pr. dansk bane i ${o.saeson.aar}. Boblens størrelse viser antal starter, og ringen markerer hjemmebanen.</figcaption>
     </figure>
   </div>
 </section>
