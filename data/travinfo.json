@@ -1,5 +1,5 @@
 {
- "opdateret": "2026-11-13T12:07:17.369Z",
+ "opdateret": "2026-11-13T17:47:55.065Z",
  "traener": {
   "foedt": 1983,
   "hjemmebane": "Skive Trav",
@@ -9,12 +9,12 @@
  "traenerStatistik": [
   {
    "aar": 2026,
-   "starter": 213,
+   "starter": 215,
    "sejre": 26,
    "toer": 32,
    "treer": 24,
    "procent": 12,
-   "praemier": 799350
+   "praemier": 801350
   },
   {
    "aar": 2025,
@@ -56,12 +56,12 @@
  "kuskStatistik": [
   {
    "aar": 2026,
-   "starter": 288,
+   "starter": 291,
    "sejre": 34,
    "toer": 38,
    "treer": 30,
    "procent": 12,
-   "praemier": 1022500
+   "praemier": 1023500
   },
   {
    "aar": 2025,
@@ -161,9 +161,9 @@
    "foedt": "2020-03-23",
    "far": "Classic Photo (US)",
    "mor": "Victoria Light",
-   "starter": 33,
+   "starter": 34,
    "placeringer": "2-7-4",
-   "praemier": 103500,
+   "praemier": 105500,
    "rekord": "17,4m 13,2ak 15,2am"
   },
   {
@@ -226,7 +226,7 @@
    "foedt": "2022-04-19",
    "far": "Gentle Tilly (SE)",
    "mor": "Flight Surgeon (US)",
-   "starter": 26,
+   "starter": 27,
    "placeringer": "2-7-5",
    "praemier": 95750,
    "rekord": "19,7k 20,0m 14,3ak 15,1am"
@@ -454,6 +454,30 @@
   }
  ],
  "resultater": [
+  {
+   "id": "838264-648851",
+   "dato": "2026-11-13",
+   "bane": "Sk",
+   "loeb": 6,
+   "hestId": 648851,
+   "hest": "Imagine Light",
+   "placering": "4",
+   "tid": "16,5a",
+   "distance": 2060,
+   "praemie": 2000
+  },
+  {
+   "id": "838264-653138",
+   "dato": "2026-11-13",
+   "bane": "Sk",
+   "loeb": 6,
+   "hestId": 653138,
+   "hest": "Lærke D",
+   "placering": "0",
+   "tid": "17,6a",
+   "distance": 2060,
+   "praemie": 0
+  },
   {
    "id": "838213-652274",
    "dato": "2026-11-11",
@@ -3840,22 +3864,6 @@
   }
  ],
  "kommende": [
-  {
-   "dato": "2026-11-13",
-   "bane": "Sk",
-   "loeb": 6,
-   "hestId": 648851,
-   "hest": "Imagine Light",
-   "kusk": "Casper M. Nielsen"
-  },
-  {
-   "dato": "2026-11-13",
-   "bane": "Sk",
-   "loeb": 6,
-   "hestId": 653138,
-   "hest": "Lærke D",
-   "kusk": "Morten Friis"
-  },
   {
    "dato": "2026-11-18",
    "bane": "Ål",
