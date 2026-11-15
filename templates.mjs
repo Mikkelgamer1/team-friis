@@ -44,6 +44,7 @@ const BILLEDER = {
   'fold-brun': [0.75, 600, 720],
   'traening-sort': [1.155, 600, 1060],
   'fold-front': [0.75, 600, 720],
+  'morten-sulky': [1.333, 600, 800], // travet.dk (artiklen "Morten Friis tager turen til Aarhus") – kræver tilladelse, se LANCERING.md
 };
 // Hestekort fra Facebook (hest-id → billede). Forlader hesten træningslisten, forsvinder kortet.
 const HESTEKORT = { 638223: 'diamant-oestervang', 656269: 'melody', 654259: 'licorice-cash', 661285: 'huff-n-puff', 653910: 'lovely-day' };
@@ -310,14 +311,16 @@ ${bund(o)}
 }
 
 // Sidehoved på undersider: mørkt felt med et af stallens billeder bagved, stor titel og nøgletal som "chips".
-const sidehoved = ({ sti, h1, tekst, foto, pos = '50% 50%', chips = [] }) => `
-<section class="sidehoved">
-  <div class="sidehoved__foto" style="--pos:${pos}">${billede(foto, '', { lazy: false })}</div>
+// `figur` = [billede, alt]: et indrammet foto til højre i stedet for et baggrundsfoto (til billeder, der er for små til fuld bredde)
+const sidehoved = ({ sti, h1, tekst, foto, pos = '50% 50%', chips = [], figur }) => `
+<section class="sidehoved${figur ? ' sidehoved--figur' : ''}">
+  ${foto ? `<div class="sidehoved__foto" style="--pos:${pos}">${billede(foto, '', { lazy: false })}</div>` : ''}
   <div class="wrap sidehoved__inner">
     <nav class="sti" aria-label="Brødkrumme"><a href="${R}">Forside</a><span aria-hidden="true">/</span><span aria-current="page">${sti}</span></nav>
     <h1>${h1}</h1>
     <p class="indled">${tekst}</p>
-    ${chips.length ? `<ul class="chips">${chips.map(([tal, tekst]) => `<li><b>${tal}</b> ${tekst}</li>`).join('')}</ul>` : ''}
+    ${chips.length ? `<ul class="chips">${chips.map(([tal, tekst]) => `<li><b>${tal}</b> ${tekst}</li>`).join('')}</ul>` : ''}${figur ? `
+    <figure class="sidehoved__figur">${billede(figur[0], figur[1], { sizes: '(min-width: 901px) 40vw, 92vw', lazy: false })}</figure>` : ''}
   </div>
 </section>`;
 
@@ -726,8 +729,7 @@ ${sidehoved({
   sti: 'Om Morten',
   h1: 'Morten Friis',
   tekst: `Professionel travtræner og kusk med ${esc(data.traener.licens)}-licens. Født i ${data.traener.foedt} – med Skive Trav som hjemmebane og stald i ${SITE.sted}.`,
-  foto: 'traening-jog',
-  pos: '50% 60%',
+  figur: ['morten-sulky', `${SITE.person} i sulkyen`],
   chips: [[o.femAar.sejre, `sejre de seneste ${o.femAar.aar} sæsoner`], [o.heste.length, 'heste i træning'], ['A1', 'licens']],
 })}
 

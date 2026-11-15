@@ -48,4 +48,5 @@ Alt indhold står i `templates.mjs`: kontaktoplysninger i `SITE` øverst. Design
 | Tidslinjen på Om-siden: landschampion for jockeyer 2004–2008 (46, 62, 45, 49, 59 sejre) | Travsportens Hall of Fame: thof.dk/media/2186/landschampionater-2018.pdf |
 | Tidslinjen: storløb med Politiken, Amalie Bork og Hokita; 20 og 17 sejre med Morten som kusk | Dansk Hestevæddeløbs resultater for hestene med officielle løbsnavne (tjekket 13.11.2026) |
 | Tidslinjen: Taroks Mindeløb med Flik Flak 2004 og 2006 | travet.dk 12.11.2026; sejrene (Charlottenlund 31.10.2004 og 29.10.2006) står i Dansk Hestevæddeløbs data uden løbsnavn |
+| Billedet af Morten i sulkyen (Om Morten) | travet.dk, artiklen "Morten Friis tager turen til Aarhus" – tilladelse mangler (LANCERING.md) |
 | Samarbejdspartnere: KRAFFT og reron Fibertech | Logoer på Mortens løbsdragt; reronfibertech.dk |
