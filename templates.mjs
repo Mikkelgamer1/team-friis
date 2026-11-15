@@ -539,10 +539,12 @@ const foelg = (fb = []) => (SITE.facebook || SITE.instagram || fb.length ? `
 
 // Løbsfarverne fra Dansk Hestevæddeløb ("Sort/blå/grøn/logo") som prikker på holdkortet
 const FARVER = { sort: '#04060c', 'blå': 'var(--blaa)', 'grøn': 'var(--groen)' };
+const loebsfarver = (data) => data.traener.farver.split('/').filter((f) => FARVER[f.toLowerCase()]);
+const prikker = (farver) => farver.map((f) => `<i style="--f:${FARVER[f.toLowerCase()]}"></i>`).join('');
 
 // Kuskesejre i karrieren: 1.000 nået 11.11.2026 (travet.dk 12.11.2026) og talt videre fra Dansk Hestevæddeløbs kuskresultater (build.mjs → kuskSejre)
 const forside = (o, data) => {
-  const farver = data.traener.farver.split('/').filter((f) => FARVER[f.toLowerCase()]);
+  const farver = loebsfarver(data);
   return `
 <section class="hero">
   <picture class="hero__foto">
@@ -566,7 +568,7 @@ const forside = (o, data) => {
         <dl>
           <div><dt>Født</dt><dd>${data.traener.foedt}</dd></div>
           <div><dt>Hjemmebane</dt><dd>${esc(data.traener.hjemmebane)}</dd></div>${farver.length ? `
-          <div><dt>Løbsfarver</dt><dd class="farver">${farver.map((f) => `<i style="--f:${FARVER[f.toLowerCase()]}"></i>`).join('')}<span class="sr">${dkListe(farver)}</span></dd></div>` : ''}
+          <div><dt>Løbsfarver</dt><dd class="farver">${prikker(farver)}<span class="sr">${dkListe(farver)}</span></dd></div>` : ''}
         </dl>
       </figcaption>
     </figure>
@@ -733,7 +735,7 @@ ${sidehoved({
   chips: [[o.femAar.sejre, `sejre de seneste ${o.femAar.aar} sæsoner`], [o.heste.length, 'heste i træning'], ['A1', 'licens']],
 })}
 
-<section class="sek sek--lys">
+<section class="sek sek--lys sek--gloed">
   <div class="wrap artikel">
     <aside class="fakta" data-vis>
       <figure class="fakta__foto">${billede('portraet', 'Morten Friis i løbsdragten', { sizes: '(min-width: 901px) 340px, 92vw' })}</figure>
@@ -741,7 +743,7 @@ ${sidehoved({
         <div><dt>Født</dt><dd>${data.traener.foedt}</dd></div>
         <div><dt>Licens</dt><dd>${esc(data.traener.licens)} – professionel træner og kusk</dd></div>
         <div><dt>Hjemmebane</dt><dd>Skive Trav</dd></div>
-        <div><dt>Løbsfarver</dt><dd>Sort, blå og grøn</dd></div>
+        <div><dt>Løbsfarver</dt><dd class="fakta__farver">${prikker(loebsfarver(data))}<span>${dkListe(loebsfarver(data))}</span></dd></div>
         <div><dt>Stald</dt><dd>Team Friis, ${SITE.sted}</dd></div>
         <div><dt>Heste i træning</dt><dd>${o.heste.length}</dd></div>
       </dl>

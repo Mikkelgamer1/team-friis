@@ -170,6 +170,9 @@ h3 { font-size: 1.2rem; }
 .sek { padding-block: var(--luft); }
 .sek--smal { padding-block: clamp(48px, 5.5vw, 80px); }
 .sek--top0 { padding-top: 0; }
+/* Lys sektion med skær i løbsfarverne og prikmønster i hjørnerne. Ingen overflow: hidden, så faktaboksen stadig kan stå fast ved rulning */
+.sek.sek--gloed { position: relative; isolation: isolate; background: radial-gradient(1000px 720px at 105% -5%, rgba(56, 189, 248, .62), transparent 60%), radial-gradient(1000px 780px at -5% 105%, rgba(76, 196, 106, .5), transparent 60%), radial-gradient(800px 560px at 55% 50%, rgba(37, 99, 235, .26), transparent 70%), radial-gradient(600px 500px at 15% 10%, rgba(37, 99, 235, .22), transparent 70%), #e6eefb; }
+.sek--gloed::before { content: ""; position: absolute; inset: 0; z-index: -1; background-image: radial-gradient(rgba(37, 99, 235, .5) 1.5px, transparent 1.8px); background-size: 24px 24px; -webkit-mask-image: radial-gradient(85% 95% at 100% 0%, #000, transparent 78%), radial-gradient(60% 70% at 0% 100%, #000, transparent 75%); mask-image: radial-gradient(85% 95% at 100% 0%, #000, transparent 78%), radial-gradient(60% 70% at 0% 100%, #000, transparent 75%); pointer-events: none; }
 .sek--lys { background: var(--lys); }
 .sek--moerk { position: relative; background: radial-gradient(1200px 500px at 85% 0%, rgba(37, 99, 235, .22), transparent 60%), radial-gradient(900px 400px at 0% 100%, rgba(76, 196, 106, .1), transparent 60%), var(--natt); color: #fff; }
 .sek--moerk .mini, .sek--moerk .note, .sek--moerk .tom { color: var(--lys-daemp); }
@@ -367,12 +370,17 @@ h3 { font-size: 1.2rem; }
 
 .artikel { display: grid; grid-template-columns: 340px 1fr; gap: clamp(36px, 6vw, 96px); align-items: start; }
 .fakta { position: sticky; top: calc(var(--top) + 24px); overflow: hidden; border-radius: var(--r); background: #fff; box-shadow: 0 30px 60px -36px rgba(11, 19, 36, .45); }
-.fakta__foto { margin: 0; }
+.fakta { background: linear-gradient(180deg, #fff 30%, #e9f1fd); }
+.fakta__foto { position: relative; margin: 0; }
+.fakta__foto::after { content: ""; position: absolute; inset: auto 0 0; height: 4px; background: var(--grad); }
 .fakta__foto img { width: 100%; height: auto; }
 .fakta dl { padding: 8px 24px 16px; }
 .fakta dl div { padding-block: 11px; border-bottom: 1px solid var(--linje); }
 .fakta dl div:last-child { border-bottom: 0; }
-.fakta dt { font-size: .7rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--daemp); }
+.fakta dt { font-size: .7rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--blaa); }
+.fakta__farver { display: flex; align-items: center; gap: 4px; }
+.fakta__farver i { width: 14px; height: 14px; border-radius: 50%; background: var(--f); box-shadow: inset 0 0 0 1px rgba(11, 19, 36, .15); }
+.fakta__farver span { margin-left: 6px; }
 .fakta dd { margin-top: 3px; font-weight: 600; }
 /* Tidslinje over karrieren: årstal til venstre, en linje i løbsfarverne og kort til højre */
 .tidslinje { --aar: clamp(120px, 15vw, 190px); position: relative; display: grid; gap: clamp(16px, 2.2vw, 26px); max-width: 1000px; }
