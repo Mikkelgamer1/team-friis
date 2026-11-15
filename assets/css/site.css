@@ -169,7 +169,6 @@ h3 { font-size: 1.2rem; }
 
 .sek { padding-block: var(--luft); }
 .sek--smal { padding-block: clamp(48px, 5.5vw, 80px); }
-.sek--top0 { padding-top: 0; }
 /* Lys sektion med skær i løbsfarverne og prikmønster i hjørnerne. Ingen overflow: hidden, så faktaboksen stadig kan stå fast ved rulning */
 .sek.sek--gloed { position: relative; isolation: isolate; background: radial-gradient(1000px 720px at 105% -5%, rgba(56, 189, 248, .62), transparent 60%), radial-gradient(1000px 780px at -5% 105%, rgba(76, 196, 106, .5), transparent 60%), radial-gradient(800px 560px at 55% 50%, rgba(37, 99, 235, .26), transparent 70%), radial-gradient(600px 500px at 15% 10%, rgba(37, 99, 235, .22), transparent 70%), #e6eefb; }
 .sek--gloed::before { content: ""; position: absolute; inset: 0; z-index: -1; background-image: radial-gradient(rgba(37, 99, 235, .5) 1.5px, transparent 1.8px); background-size: 24px 24px; -webkit-mask-image: radial-gradient(85% 95% at 100% 0%, #000, transparent 78%), radial-gradient(60% 70% at 0% 100%, #000, transparent 75%); mask-image: radial-gradient(85% 95% at 100% 0%, #000, transparent 78%), radial-gradient(60% 70% at 0% 100%, #000, transparent 75%); pointer-events: none; }
@@ -322,6 +321,7 @@ h3 { font-size: 1.2rem; }
 .ydelser p { color: var(--daemp); }
 
 .adresse { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 24px; padding: clamp(24px, 3vw, 40px); border-radius: var(--r); background: #fff; box-shadow: 0 18px 40px -26px rgba(11, 19, 36, .35); }
+.adresse-blok { margin-top: var(--luft); }
 .adresse__stor { font-size: clamp(1.4rem, 2.6vw, 2.1rem); font-weight: 800; font-stretch: 112%; line-height: 1.2; }
 
 /* ---------- kontaktbånd og bund ---------- */

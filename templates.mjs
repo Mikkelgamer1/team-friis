@@ -522,7 +522,7 @@ const social = (href, ikon, navn, adresse, foto) => `
       </a>`;
 
 const foelg = (fb = []) => (SITE.facebook || SITE.instagram || fb.length ? `
-<section class="sek sek--lys">
+<section class="sek sek--lys sek--gloed">
   <div class="wrap foelg">
     <div>
       ${etiket('Følg med', ' data-vis')}
@@ -593,7 +593,7 @@ const forside = (o, data) => {
   </div>
 </section>
 
-<section class="sek sek--lys">
+<section class="sek sek--lys sek--gloed">
   <div class="wrap traener">
     <figure class="traener__foto" data-vis>${billede('i-loeb', 'Travhest og kusk i opløbet', { sizes: '(min-width: 901px) 34vw, 90vw' })}</figure>
     <div>
@@ -628,7 +628,7 @@ const forside = (o, data) => {
   </div>
 </section>
 
-<section class="sek sek--lys">
+<section class="sek sek--lys sek--gloed">
   <div class="wrap">
     <div class="sekhoved">
       <div>
@@ -666,7 +666,7 @@ const forside = (o, data) => {
   </div>
 </section>
 
-<section class="sek sek--lys">
+<section class="sek sek--lys sek--gloed">
   <div class="wrap duo">
     <div>
       ${etiket('Banerne', ' data-vis')}
@@ -791,7 +791,7 @@ ${sidehoved({
   chips: [[o.heste.length, 'heste i træning'], [`${o.aldre[0]}–${o.aldre[1]}`, 'år gamle'], [o.banetal.length, `baner i ${o.saeson.aar}`]],
 })}
 
-<section class="sek sek--lys">
+<section class="sek sek--lys sek--gloed">
   <div class="wrap">
     <div class="sekhoved">
       <div>
@@ -816,7 +816,7 @@ ${sidehoved({
   </div>
 </section>
 
-<section class="sek sek--lys">
+<section class="sek sek--lys sek--gloed">
   <div class="wrap duo">
     <div>
       ${etiket('Hjemmebanen', ' data-vis')}
@@ -831,10 +831,7 @@ ${sidehoved({
       <figcaption>Sejre pr. dansk bane i ${o.saeson.aar}. Boblens størrelse viser antal starter, og ringen markerer hjemmebanen.</figcaption>
     </figure>
   </div>
-</section>
-
-<section class="sek sek--lys sek--top0">
-  <div class="wrap">
+  <div class="wrap adresse-blok">
     <div class="adresse" data-vis>
       <div>
         ${etiket('Adresse')}
