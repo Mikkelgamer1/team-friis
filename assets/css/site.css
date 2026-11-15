@@ -307,7 +307,7 @@ h3 { font-size: 1.2rem; }
 .social:hover > img { scale: 1.05; }
 .social__ikon { display: grid; place-items: center; width: 48px; height: 48px; border-radius: 50%; background: var(--grad); box-shadow: 0 10px 24px -8px rgba(37, 99, 235, .7); }
 .social b { display: block; font-size: clamp(1.15rem, 1.6vw, 1.4rem); font-weight: 800; font-stretch: 115%; }
-.social small { font-size: .84rem; color: var(--lys-tekst); overflow-wrap: anywhere; }
+.social small { font-size: .84rem; color: var(--lys-tekst); overflow-wrap: break-word; }
 .social .ud { position: absolute; top: clamp(18px, 2vw, 26px); right: clamp(18px, 2vw, 26px); width: 14px; height: 14px; }
 .fbkort { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; margin-top: 32px; }
 .fbkort a { display: flex; flex-direction: column; height: 100%; overflow: hidden; border-radius: 18px; background: #fff; box-shadow: 0 12px 30px -18px rgba(11, 19, 36, .35); transition: transform .3s var(--ease); }

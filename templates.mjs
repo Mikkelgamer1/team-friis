@@ -535,7 +535,7 @@ const foelg = (fb = []) => (SITE.facebook || SITE.instagram || fb.length ? `
       <h2 data-vis style="--i:1">Hverdagen hos Team Friis.</h2>
       <p data-vis style="--i:2">Startdage, sejre og livet i stalden deles løbende på ${[SITE.facebook && 'Facebook', SITE.instagram && 'Instagram'].filter(Boolean).join(' og ')}${fb.length ? ' – her er de seneste opslag' : ''}.</p>
     </div>
-    <div class="sociale" data-vis style="--i:2">${SITE.facebook ? social(SITE.facebook, FB_IKON, 'Facebook', SITE.facebook.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, ''), 'traening-par') : ''}${SITE.instagram ? social(SITE.instagram, IG_IKON, 'Instagram', '@' + SITE.instagram.replace(/\/$/, '').split('/').pop(), 'fold-portraet') : ''}
+    <div class="sociale" data-vis style="--i:2">${SITE.facebook ? social(SITE.facebook, FB_IKON, 'Facebook', SITE.facebook.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '').replace('/', '/<wbr>'), 'traening-par') : ''}${SITE.instagram ? social(SITE.instagram, IG_IKON, 'Instagram', '@' + SITE.instagram.replace(/\/$/, '').split('/').pop(), 'fold-portraet') : ''}
     </div>
   </div>
   ${fb.length ? `<div class="wrap">${fbKort(fb)}</div>` : ''}
