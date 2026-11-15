@@ -230,7 +230,6 @@ const bund = (o) => `
   </div>
   <div class="wrap bund__linje">
     <p>Resultater og statistik: Dansk Hestevæddeløb · opdateret ${o.opdateret}</p>
-    <p>Billeder: Team Friis' Facebook-side</p>
     <p>© ${new Date().getFullYear()} ${SITE.navn}</p>
   </div>
 </footer>`;
