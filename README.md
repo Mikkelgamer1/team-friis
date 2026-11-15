@@ -49,4 +49,5 @@ Alt indhold står i `templates.mjs`: kontaktoplysninger i `SITE` øverst. Design
 | Tidslinjen: storløb med Politiken, Amalie Bork og Hokita; 20 og 17 sejre med Morten som kusk | Dansk Hestevæddeløbs resultater for hestene med officielle løbsnavne (tjekket 13.11.2026) |
 | Tidslinjen: Taroks Mindeløb med Flik Flak 2004 og 2006 | travet.dk 12.11.2026; sejrene (Charlottenlund 31.10.2004 og 29.10.2006) står i Dansk Hestevæddeløbs data uden løbsnavn |
 | Billedet af Morten i sulkyen (Om Morten) | travet.dk, artiklen "Morten Friis tager turen til Aarhus" – tilladelse mangler (LANCERING.md) |
+| Firmanavn og CVR (Travtræner Morten Friis Pedersen, CVR 37996181) i bunden | CVR-registret, datacvr.virk.dk/enhed/virksomhed/37996181 (tjekket 15.11.2026) |
 | Samarbejdspartnere: KRAFFT og reron Fibertech | Logoer på Mortens løbsdragt; reronfibertech.dk |

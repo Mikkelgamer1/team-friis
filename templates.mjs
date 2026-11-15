@@ -7,6 +7,8 @@ export const SITE = {
   person: 'Morten Friis',
   fornavn: 'Morten',
   licens: 20245,
+  firma: 'Travtræner Morten Friis Pedersen', // navn og CVR fra CVR-registret (datacvr.virk.dk, tjekket 15.11.2026) – skal stå på siden efter e-handelsloven § 7
+  cvr: '37996181',
   telefon: '+45 24 26 64 99',
   email: 'teamfriis@outlook.dk',
   gade: 'Vittrupvej 19',
@@ -230,7 +232,7 @@ const bund = (o) => `
   </div>
   <div class="wrap bund__linje">
     <p>Resultater og statistik: Dansk Hestevæddeløb · opdateret ${o.opdateret}</p>
-    <p>© ${new Date().getFullYear()} ${SITE.navn}</p>
+    <p>© ${new Date().getFullYear()} ${SITE.navn} · ${SITE.firma} · CVR ${SITE.cvr}</p>
   </div>
 </footer>`;
 
