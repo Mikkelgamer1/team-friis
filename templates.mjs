@@ -717,7 +717,6 @@ const tidslinje = (data) => {
         <h3>sejre som kusk</h3>
         <p>Sejr nr. 1.000 kom med Kaos i Aalborg den 11. november 2026.</p>`, ' tidslinje__kort--stor')}
     </ol>
-    <p class="note" data-vis>Kilder: Travsportens Hall of Fame (landschampionater), Dansk Hestevæddeløbs løbsresultater og travet.dk.</p>
   </div>
 </section>`;
 };
