@@ -702,7 +702,7 @@ const tidslinje = (data) => {
       <li data-vis style="--i:${i}"><span class="tidslinje__aar">${aar}</span><div class="tidslinje__kort${cls}">${indhold}
       </div></li>`;
   return `
-<section class="sek sek--lys">
+<section class="sek sek--lys sek--gloed">
   <div class="wrap">
     <div class="sekhoved">
       <div>
