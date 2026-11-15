@@ -405,7 +405,8 @@ const profilkort = (h, i) => `
       </a>`;
 
 // Hestekortene fra Facebook.
-const hestekort = (heste) => `<ul class="hestekort" aria-label="Hestekort fra Team Friis' Facebook">${heste.map((h, i) => `
+// Antallet af kolonner følger antallet af kort (mindst 3), så rækken altid er fyldt ud
+const hestekort = (heste) => `<ul class="hestekort" style="--n:${Math.max(3, heste.length)}" aria-label="Hestekort fra Team Friis' Facebook">${heste.map((h, i) => `
       <li data-vis style="--i:${i}"><a href="https://travinfo.dk/horse_tabs/${h.id}" target="_blank" rel="noopener"><img src="${R}assets/img/hest-${HESTEKORT[h.id]}-600.webp" srcset="${R}assets/img/hest-${HESTEKORT[h.id]}-600.webp 600w, ${R}assets/img/hest-${HESTEKORT[h.id]}-1200.webp 1200w" sizes="(min-width: 1100px) 24vw, 80vw" width="1200" height="900" alt="Hestekort for ${esc(h.navn)} fra Team Friis" loading="lazy" decoding="async"><span>${esc(h.navn)} ${ud}${nyFane}</span></a></li>`).join('')}
     </ul>`;
 
@@ -448,8 +449,16 @@ const ydelser = (o) => `
       </li>
     </ul>`;
 
-const galleri = (n = 8) => {
-  const fotos = [
+// Stalden-siden viser hele galleriet, forsiden et kort udvalg med billeder, der ikke står på Stalden-siden
+const FORSIDEFOTOS = [
+  ['traening-sort', 'Mørk travhest i træning på Skive Trav'],
+  ['fold-front', 'Travhest set forfra på folden'],
+  ['fold-sol', 'Travhest på folden i sommersol'],
+];
+const galleri = (fotos = GALLERI, cls = '') => `<ul class="galleri${cls}">${fotos.map(([navn, alt], i) => `
+      <li data-vis style="--i:${i % 4}">${billede(navn, alt, { sizes: '(min-width: 1000px) 30vw, 50vw' })}</li>`).join('')}
+    </ul>`;
+const GALLERI = [
     ['fold-tre', 'Tre heste på folden i solskin'],
     ['traening-jog', 'Travhest i træning på Skive Trav'],
     ['fold-portraet', 'Mørk travhest tæt på ved folden'],
@@ -458,11 +467,7 @@ const galleri = (n = 8) => {
     ['traening-bane', 'Formiddagstræning på Skive Trav'],
     ['fold-rul', 'Hest ruller sig i sandet på folden'],
     ['fold-brun', 'Brun travhest på folden'],
-  ].slice(0, n);
-  return `<ul class="galleri">${fotos.map(([navn, alt], i) => `
-      <li data-vis style="--i:${i % 4}">${billede(navn, alt, { sizes: '(min-width: 1000px) 30vw, 50vw' })}</li>`).join('')}
-    </ul>`;
-};
+];
 
 const sejreTekst = (n) => `${n} ${n === 1 ? 'sejr' : 'sejre'}`;
 
@@ -638,7 +643,8 @@ const forside = (o, data) => {
       </div>
       <p data-vis style="--i:2">Fra formiddagstræning på Skive Trav til fritid på foldene.</p>
     </div>
-    ${galleri()}
+    ${galleri(FORSIDEFOTOS, ' galleri--kort')}
+    <p class="valg" data-vis>${link('stalden/', 'Se flere billeder fra stalden')}</p>
   </div>
 </section>
 
