@@ -1,8 +1,8 @@
 // Al HTML til sitet. Tekster rettes her; tal, heste og resultater kommer fra data/travinfo.json.
 
 export const SITE = {
-  // ← Bekræft domænet før lancering (kan også sættes med miljøvariablen SITE_URL). På Vercel bruges projektets adresse.
-  url: (process.env.SITE_URL || (process.env.VERCEL_PROJECT_PRODUCTION_URL && 'https://' + process.env.VERCEL_PROJECT_PRODUCTION_URL) || 'https://www.mortenfriis.dk').replace(/\/$/, ''),
+  // ← Sæt det rigtige domæne, når det er valgt (eller miljøvariablen SITE_URL). På Vercel bruges projektets adresse. mortenfriis.dk tilhører et andet firma, teamfriis.dk er taget.
+  url: (process.env.SITE_URL || (process.env.VERCEL_PROJECT_PRODUCTION_URL && 'https://' + process.env.VERCEL_PROJECT_PRODUCTION_URL) || 'https://team-friis.vercel.app').replace(/\/$/, ''),
   navn: 'Team Friis',
   person: 'Morten Friis',
   fornavn: 'Morten',
