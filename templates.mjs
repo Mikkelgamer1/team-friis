@@ -865,8 +865,8 @@ ${sidehoved({
   sti: 'Heste',
   h1: 'Heste i træning',
   tekst: 'Træningslisten kommer direkte fra Dansk Hestevæddeløb og følger automatisk med, når heste kommer til eller rejser videre.',
-  foto: 'fold-sol',
-  pos: '50% 40%',
+  foto: 'traening-jog', // lyst træningsbillede med hesten til højre, hvor overlayet er svagest
+  pos: '50% 45%',
   chips: [[o.heste.length - o.ungheste.length, 'løbsheste'], [o.ungheste.length, 'ungheste']],
 })}
 

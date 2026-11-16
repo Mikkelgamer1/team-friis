@@ -353,7 +353,13 @@ h3 { font-size: 1.2rem; }
 .sidehoved { position: relative; display: flex; align-items: flex-end; min-height: clamp(420px, 56vh, 600px); padding-block: calc(var(--top) + 48px) clamp(40px, 5vw, 64px); background: var(--natt); color: #fff; overflow: hidden; isolation: isolate; }
 .sidehoved__foto { position: absolute; inset: 0; z-index: -2; }
 .sidehoved__foto img { width: 100%; height: 100%; object-fit: cover; object-position: var(--pos, 50% 50%); }
-.sidehoved::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(7, 11, 24, .95) 0%, rgba(7, 11, 24, .82) 40%, rgba(7, 11, 24, .45) 70%, rgba(7, 11, 24, .25) 100%), linear-gradient(0deg, rgba(7, 11, 24, .92), rgba(7, 11, 24, 0) 60%); }
+/* Mørkt bag teksten til venstre, mens fotoet får lov at stå lyst i højre side */
+.sidehoved::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(7, 11, 24, .72) 0%, rgba(7, 11, 24, .5) 38%, rgba(7, 11, 24, .12) 68%, rgba(7, 11, 24, 0) 100%), linear-gradient(0deg, rgba(7, 11, 24, .7), rgba(7, 11, 24, 0) 42%); }
+/* Teksten holdes læsbar med en blød skygge i stedet for et tungt overlay, så fotoet kan stå lyst */
+.sidehoved .sti, .sidehoved h1, .sidehoved .indled { text-shadow: 0 1px 2px rgba(7, 11, 24, .45), 0 6px 30px rgba(7, 11, 24, .7); }
+.sidehoved .indled { color: #e6edf9; }
+.sidehoved .sti { color: rgba(230, 237, 249, .85); }
+.sidehoved .chips li { background: rgba(7, 11, 24, .5); }
 .sidehoved__inner { width: 100%; }
 /* Sidehoved med et indrammet foto til højre i stedet for et baggrundsfoto */
 .sidehoved--figur { align-items: center; background: radial-gradient(900px 520px at 78% 35%, rgba(37, 99, 235, .3), transparent 65%), radial-gradient(700px 420px at 8% 100%, rgba(76, 196, 106, .14), transparent 60%), var(--natt); }
@@ -535,6 +541,8 @@ h3 { font-size: 1.2rem; }
   .tidslinje > li { grid-template-columns: 1fr; gap: 10px; padding-left: 30px; }
   .tidslinje > li::before { left: 7px; top: 8px; }
   .tidslinje__aar { padding-top: 0; text-align: left; }
+  /* På mobil går teksten i sidehovedet hele vejen ud, så overlayet lægges nedefra i stedet for fra venstre */
+  .sidehoved::before { background: linear-gradient(0deg, rgba(7, 11, 24, .85) 0%, rgba(7, 11, 24, .5) 50%, rgba(7, 11, 24, .15) 100%); }
 }
 @media (max-width: 700px) {
   /* "Mest vindende" swipes sidelæns i stedet for seks høje kort under hinanden */
