@@ -456,6 +456,7 @@ h3 { font-size: 1.2rem; }
 .hest__tal--tom { display: block; font-size: .78rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--daemp); }
 
 .kontakt { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.kontakt__foelg { margin-top: var(--luft); }
 .kontakt__felt { padding: clamp(24px, 3vw, 36px); border-radius: var(--r); background: #fff; box-shadow: 0 18px 40px -28px rgba(11, 19, 36, .35); }
 .kontakt__felt--tlf { background: radial-gradient(500px 240px at 100% 0%, rgba(76, 196, 106, .35), transparent 60%), linear-gradient(130deg, #123a9c, var(--blaa)); color: #fff; }
 .kontakt__felt--tlf .mini { color: rgba(255, 255, 255, .7); }

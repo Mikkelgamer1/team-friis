@@ -527,8 +527,13 @@ const social = (href, ikon, navn, adresse, foto) => `
         ${ud}${nyFane}
       </a>`;
 
-const foelg = (fb = []) => (SITE.facebook || SITE.instagram || fb.length ? `
-<section class="sek sek--lys sek--gloed">
+// "Følg med" er sin egen sektion på de fleste sider. På Kontakt står den i samme sektion som kontaktfelterne,
+// så de to lyse flader får én fælles baggrund i stedet for en synlig kant imellem.
+const harFoelg = (fb = []) => Boolean(SITE.facebook || SITE.instagram || fb.length);
+const foelg = (fb = []) => (harFoelg(fb) ? `
+<section class="sek sek--lys sek--gloed">${foelgIndhold(fb)}
+</section>` : '');
+const foelgIndhold = (fb = []) => `
   <div class="wrap foelg">
     <div>
       ${etiket('Følg med', ' data-vis')}
@@ -538,8 +543,7 @@ const foelg = (fb = []) => (SITE.facebook || SITE.instagram || fb.length ? `
     <div class="sociale" data-vis style="--i:2">${SITE.facebook ? social(SITE.facebook, FB_IKON, 'Facebook', SITE.facebook.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '').replace('/', '/<wbr>'), 'traening-par') : ''}${SITE.instagram ? social(SITE.instagram, IG_IKON, 'Instagram', '@' + SITE.instagram.replace(/\/$/, '').split('/').pop(), 'fold-portraet') : ''}
     </div>
   </div>
-  ${fb.length ? `<div class="wrap">${fbKort(fb)}</div>` : ''}
-</section>` : '');
+  ${fb.length ? `<div class="wrap">${fbKort(fb)}</div>` : ''}`;
 
 // ---------- sider ----------
 
@@ -874,7 +878,7 @@ ${o.kortheste.length ? `
   </div>
 </section>` : ''}
 
-<section class="sek sek--lys">
+<section class="sek sek--lys sek--gloed">
   <div class="wrap">
     ${hestegruppe('Løbsheste', o.heste.filter((h) => h.alder >= 3))}
     ${hestegruppe('2-årige', o.heste.filter((h) => h.alder === 2))}
@@ -894,7 +898,7 @@ ${sidehoved({
   chips: [[o.saeson.sejre, `sejre i ${o.saeson.aar}`], [`${o.saeson.procent} %`, 'sejrsprocent']],
 })}
 
-<section class="sek sek--lys">
+<section class="sek sek--lys sek--gloed">
   <div class="wrap">
     ${etiket(`Sæson ${o.saeson.aar}`, ' data-vis')}
     <dl class="kpi" data-vis>
@@ -926,7 +930,7 @@ ${sidehoved({
   </div>
 </section>
 
-<section class="sek sek--lys">
+<section class="sek sek--lys sek--gloed">
   <div class="wrap">
     <div class="sekhoved">
       <div>
@@ -952,7 +956,7 @@ ${sidehoved({
   pos: '50% 50%',
 })}
 
-<section class="sek sek--lys">
+<section class="sek sek--lys sek--gloed">
   <div class="wrap kontakt">
     <div class="kontakt__felt kontakt__felt--tlf" data-vis>
       <h2 class="mini">Telefon</h2>
@@ -972,9 +976,10 @@ ${sidehoved({
       </div>
       <div class="kort kort--mini">${danmarkskort([{ kode: HJEM, navn: 'Skive' }], 'Danmarkskort, hvor Skive er markeret')}</div>
     </div>
-  </div>
-</section>
-${foelg()}`;
+  </div>${harFoelg() ? `
+  <div class="kontakt__foelg">${foelgIndhold()}
+  </div>` : ''}
+</section>`;
 
 const ikkeFundet = () => `
 <section class="sidehoved sidehoved--enkel">
