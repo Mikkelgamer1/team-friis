@@ -47,6 +47,7 @@ Alt indhold står i `templates.mjs`: kontaktoplysninger i `SITE` øverst. Design
 | Sejre som kusk i karrieren (seglet på forsiden) | 1.000 nået med Kaos i Aalborg 11.11.2026 (travet.dk 12.11.2026: "Morten Friis: Fra jockeyernes førertrøje til 1.000 sejre"); hver ny sejr lægges til fra Dansk Hestevæddeløbs kuskresultater ved den daglige opdatering |
 | Tidslinjen på Om-siden: landschampion for jockeyer 2004–2008 (46, 62, 45, 49, 59 sejre) | Travsportens Hall of Fame: thof.dk/media/2186/landschampionater-2018.pdf |
 | Tidslinjen: storløb med Politiken, Amalie Bork og Hokita; 20 og 17 sejre med Morten som kusk | Dansk Hestevæddeløbs resultater for hestene med officielle løbsnavne (tjekket 13.11.2026) |
+| Tidslinjen: starten (licens som 16-årig, lært af faren John Friis – træner i Skive siden 1981 – og hos Arvid Olsen på Charlottenlund) og 2020 (træneransvaret for Team Friis' heste overtaget 1.1.2020) | travet.dk 12.11.2026: "Morten Friis: Fra jockeyernes førertrøje til 1.000 sejre" |
 | Tidslinjen: Taroks Mindeløb med Flik Flak 2004 og 2006 | travet.dk 12.11.2026; sejrene (Charlottenlund 31.10.2004 og 29.10.2006) står i Dansk Hestevæddeløbs data uden løbsnavn |
 | Billedet af Morten i sulkyen (Om Morten) | travet.dk, artiklen "Morten Friis tager turen til Aarhus" – tilladelse mangler (LANCERING.md) |
 | Firmanavn og CVR (Travtræner Morten Friis Pedersen, CVR 37996181) i bunden | CVR-registret, datacvr.virk.dk/enhed/virksomhed/37996181 (tjekket 15.11.2026) |
