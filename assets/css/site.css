@@ -151,6 +151,8 @@ h3 { font-size: 1.2rem; }
 
 /* Sæsonens tal i et glaskort, der ligger hen over heltens nederste kant */
 .tal { position: relative; z-index: 2; margin-top: -86px; }
+.hero { z-index: 1; }
+.tal + .sek { margin-top: -320px; padding-top: calc(var(--luft) + 320px); }
 .tal__kort { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 20px clamp(24px, 3.4vw, 52px); padding: 22px clamp(20px, 3vw, 36px); border-radius: var(--r); background: rgba(13, 21, 48, .78); color: #fff; box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .12), 0 30px 60px -20px rgba(7, 11, 24, .6); backdrop-filter: blur(18px) saturate(150%); }
 .tal__titel b { display: block; font-size: 1.15rem; font-weight: 800; font-stretch: 118%; }
 .tal__titel span { font-size: .74rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--lys-daemp); }
