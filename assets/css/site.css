@@ -121,14 +121,19 @@ h3 { font-size: 1.2rem; }
 
 .hero { position: relative; display: flex; align-items: center; min-height: min(100svh, 880px); padding-block: calc(var(--top) + 40px) 140px; background: var(--natt); color: #fff; overflow: hidden; isolation: isolate; }
 .hero__foto { position: absolute; inset: 0; z-index: -2; }
-.hero__foto img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 62%; }
-.hero::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(7, 11, 24, .94) 0%, rgba(7, 11, 24, .8) 38%, rgba(7, 11, 24, .35) 62%, rgba(7, 11, 24, .1) 80%), linear-gradient(0deg, rgba(7, 11, 24, .9) 0%, rgba(7, 11, 24, 0) 45%); }
+.hero__foto img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 62%; filter: brightness(1.1) saturate(1.08); }
+/* Som på undersiderne: let overlay, så solnedgangen står frem, og skygge på teksten i stedet for et tungt mørke */
+.hero::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(7, 11, 24, .72) 0%, rgba(7, 11, 24, .5) 36%, rgba(7, 11, 24, .12) 62%, rgba(7, 11, 24, 0) 82%), linear-gradient(0deg, rgba(7, 11, 24, .75) 0%, rgba(7, 11, 24, 0) 40%); }
+.hero .etiket, .hero__indled { text-shadow: 0 1px 2px rgba(7, 11, 24, .45), 0 6px 30px rgba(7, 11, 24, .7); }
+.hero h1 { filter: drop-shadow(0 4px 24px rgba(7, 11, 24, .55)); } /* drop-shadow, fordi tekstskygge ville skinne igennem det gradientfarvede FRIIS */
+.hero__slogan span, .hero .knap--glas { background: rgba(7, 11, 24, .45); }
+.hero .knap--glas:hover { background: rgba(7, 11, 24, .62); }
 .hero__gitter { display: grid; grid-template-columns: 1.3fr minmax(260px, .7fr); gap: clamp(32px, 5vw, 80px); align-items: center; }
 .hero h1 { margin-bottom: 18px; font-size: clamp(3.4rem, 9vw, 8rem); font-weight: 900; font-stretch: 125%; line-height: .88; letter-spacing: -.03em; text-transform: uppercase; }
 .hero h1 span { display: block; background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
 .hero__slogan { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 22px; }
 .hero__slogan span { padding: 6px 14px; border-radius: 999px; background: rgba(255, 255, 255, .1); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .2); backdrop-filter: blur(8px); font-size: .82rem; font-weight: 700; font-stretch: 110%; letter-spacing: .08em; text-transform: uppercase; }
-.hero__indled { max-width: 50ch; font-size: clamp(1.05rem, 1.35vw, 1.2rem); color: var(--lys-tekst); }
+.hero__indled { max-width: 50ch; font-size: clamp(1.05rem, 1.35vw, 1.2rem); color: #e6edf9; }
 /* Holdkortet: portræt og officielle oplysninger som et spillerkort, der retter sig op ved hover */
 .holdkort { position: relative; justify-self: end; width: min(100%, 350px); margin: 0; padding: 10px; border-radius: 28px; background: rgba(13, 21, 48, .6); backdrop-filter: blur(16px) saturate(140%); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .14), 0 50px 90px -30px rgba(0, 0, 0, .85); rotate: 2.5deg; transition: rotate .6s var(--ease); }
 .holdkort:hover { rotate: 0deg; }
@@ -510,7 +515,8 @@ h3 { font-size: 1.2rem; }
   :root { --top: 66px; }
   .top__cta { display: none; }
   .hero { min-height: auto; padding-bottom: 120px; }
-  .hero::before { background: linear-gradient(0deg, rgba(7, 11, 24, .95) 10%, rgba(7, 11, 24, .45) 70%, rgba(7, 11, 24, .6)); }
+  .hero::before { background: linear-gradient(0deg, rgba(7, 11, 24, .85) 8%, rgba(7, 11, 24, .28) 62%, rgba(7, 11, 24, .32)); }
+  .hero__foto img { filter: brightness(1.22) saturate(1.1); }
   .hero__gitter, .traener, .duo, .resgitter, .tabeller, .cta__inner, .artikel, .partnere, .foelg, .sekhoved { grid-template-columns: 1fr; }
   .holdkort { display: grid; grid-template-columns: 104px 1fr; align-items: center; gap: 4px; justify-self: stretch; width: 100%; margin-top: 8px; rotate: 0deg; }
   .holdkort__foto { aspect-ratio: 1; border-radius: 18px; }
