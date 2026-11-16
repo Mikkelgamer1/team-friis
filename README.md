@@ -15,6 +15,14 @@ node build.mjs --test     selvtjek
 - `.github/workflows/opdater.yml` henter data hver morgen og ved hvert push til `main` og gemmer dem i repoet – så bygger Vercel en ny udgave. Fejler hentningen, bygges der videre med de gemte data.
 - På Vercel bygges sitet med `vercel.json` og får projektets adresse automatisk. En `vercel.app`- eller `github.io`-adresse holdes ude af søgemaskinerne.
 
+## Domænet teamfriistrav.dk
+
+1. Køb domænet hos en dansk udbyder.
+2. Vercel → projektet → **Settings → Domains**: tilføj `teamfriistrav.dk` og `www.teamfriistrav.dk` (lad www sende videre til `teamfriistrav.dk`).
+3. Sæt de DNS-poster, Vercel viser, hos domæneudbyderen. Det kan tage fra minutter til et døgn.
+4. Byg igen (Vercel → **Deployments → Redeploy**, eller vent på næste daglige opdatering). Så bruger sitet det nye domæne til links, sitemap og deling, og `robots.txt` åbner for søgemaskinerne.
+5. Tilmeld `https://teamfriistrav.dk` i Google Search Console og indsend `sitemap.xml`.
+
 ## Facebook-opslag på forsiden
 
 De 5 seneste opslag fra staldens Facebook-**side** kan vises som kort på forsiden. De hentes ved den daglige opdatering via Meta's Graph API, og billederne gemmes på sitet selv – ingen indlejring, ingen cookies og intet klik.
