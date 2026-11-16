@@ -496,7 +496,7 @@ h3 { font-size: 1.2rem; }
   .tal dl { justify-content: start; gap: 28px; }
   .tal__naeste { padding-left: 0; padding-top: 14px; border-left: 0; border-top: 1px solid var(--lys-linje); }
   .kpi { grid-template-columns: repeat(3, 1fr); }
-  .hestekort, .fbkort { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: minmax(240px, 40%); overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 10px; }
+  .hestekort, .fbkort { position: relative; grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: minmax(240px, 40%); overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 10px; }
   .hestekort li, .fbkort li { scroll-snap-align: start; }
 }
 @media (max-width: 900px) {
@@ -537,7 +537,7 @@ h3 { font-size: 1.2rem; }
 }
 @media (max-width: 700px) {
   /* "Mest vindende" swipes sidelæns i stedet for seks høje kort under hinanden */
-  .profiler { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 86%; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 10px; }
+  .profiler { position: relative; grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 86%; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 10px; }
   .profil { scroll-snap-align: start; }
 }
 @media (max-width: 560px) {
