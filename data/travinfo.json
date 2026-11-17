@@ -1,5 +1,5 @@
 {
- "opdateret": "2026-11-16T12:41:06.294Z",
+ "opdateret": "2026-11-17T13:14:47.383Z",
  "traener": {
   "foedt": 1983,
   "hjemmebane": "Skive Trav",
@@ -3874,6 +3874,30 @@
    "loeb": 1,
    "hestId": 656994,
    "hest": "Master K",
+   "kusk": "Morten Friis"
+  },
+  {
+   "dato": "2026-11-20",
+   "bane": "Od",
+   "loeb": 4,
+   "hestId": 652943,
+   "hest": "Le Mans",
+   "kusk": "Morten Friis"
+  },
+  {
+   "dato": "2026-11-20",
+   "bane": "Od",
+   "loeb": 6,
+   "hestId": 647771,
+   "hest": "Hokita",
+   "kusk": "Morten Friis"
+  },
+  {
+   "dato": "2026-11-23",
+   "bane": "Sk",
+   "loeb": 91,
+   "hestId": 659965,
+   "hest": "Thorin E P (DE)",
    "kusk": "Morten Friis"
   }
  ]
