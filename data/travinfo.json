@@ -1,5 +1,5 @@
 {
- "opdateret": "2026-11-17T13:14:47.383Z",
+ "opdateret": "2026-11-18T12:58:45.058Z",
  "traener": {
   "foedt": 1983,
   "hjemmebane": "Skive Trav",
@@ -3890,6 +3890,22 @@
    "loeb": 6,
    "hestId": 647771,
    "hest": "Hokita",
+   "kusk": "Morten Friis"
+  },
+  {
+   "dato": "2026-11-23",
+   "bane": "Sk",
+   "loeb": 1,
+   "hestId": 658341,
+   "hest": "Niiko Lane (SE)",
+   "kusk": "Morten Friis"
+  },
+  {
+   "dato": "2026-11-23",
+   "bane": "Sk",
+   "loeb": 2,
+   "hestId": 661285,
+   "hest": "Huff N Puff (SE)",
    "kusk": "Morten Friis"
   },
   {
