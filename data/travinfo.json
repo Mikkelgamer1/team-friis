@@ -1,5 +1,5 @@
 {
- "opdateret": "2026-11-18T12:58:45.058Z",
+ "opdateret": "2026-11-19T12:56:46.566Z",
  "traener": {
   "foedt": 1983,
   "hjemmebane": "Skive Trav",
@@ -9,7 +9,7 @@
  "traenerStatistik": [
   {
    "aar": 2026,
-   "starter": 215,
+   "starter": 216,
    "sejre": 26,
    "toer": 32,
    "treer": 24,
@@ -56,12 +56,12 @@
  "kuskStatistik": [
   {
    "aar": 2026,
-   "starter": 291,
-   "sejre": 34,
+   "starter": 293,
+   "sejre": 35,
    "toer": 38,
    "treer": 30,
    "procent": 12,
-   "praemier": 1023500
+   "praemier": 1033500
   },
   {
    "aar": 2025,
@@ -101,8 +101,8 @@
   }
  ],
  "kuskSejre": {
-  "antal": 1001,
-  "til": "2026-11-11-06"
+  "antal": 1002,
+  "til": "2026-11-18-05"
  },
  "heste": [
   {
@@ -269,7 +269,7 @@
    "foedt": "2023-05-09",
    "far": "International Moni (US)",
    "mor": "Diva K",
-   "starter": 6,
+   "starter": 7,
    "placeringer": "1-0-0",
    "praemier": 18000,
    "rekord": "19,9k 19,9m 18,0ak 18,2am"
@@ -458,6 +458,18 @@
   }
  ],
  "resultater": [
+  {
+   "id": "838314-656994",
+   "dato": "2026-11-18",
+   "bane": "Ål",
+   "loeb": 1,
+   "hestId": 656994,
+   "hest": "Master K",
+   "placering": "d",
+   "tid": "g5a",
+   "distance": 2140,
+   "praemie": 0
+  },
   {
    "id": "838264-648851",
    "dato": "2026-11-13",
@@ -3868,14 +3880,6 @@
   }
  ],
  "kommende": [
-  {
-   "dato": "2026-11-18",
-   "bane": "Ål",
-   "loeb": 1,
-   "hestId": 656994,
-   "hest": "Master K",
-   "kusk": "Morten Friis"
-  },
   {
    "dato": "2026-11-20",
    "bane": "Od",
