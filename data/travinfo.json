@@ -1,5 +1,5 @@
 {
- "opdateret": "2026-11-20T12:48:14.212Z",
+ "opdateret": "2026-11-21T12:33:55.990Z",
  "traener": {
   "foedt": 1983,
   "hjemmebane": "Skive Trav",
@@ -9,7 +9,7 @@
  "traenerStatistik": [
   {
    "aar": 2026,
-   "starter": 216,
+   "starter": 218,
    "sejre": 26,
    "toer": 32,
    "treer": 24,
@@ -56,7 +56,7 @@
  "kuskStatistik": [
   {
    "aar": 2026,
-   "starter": 293,
+   "starter": 295,
    "sejre": 35,
    "toer": 38,
    "treer": 30,
@@ -139,7 +139,7 @@
    "foedt": "2019-06-27",
    "far": "Ens Snapshot (US)",
    "mor": "Optimal Sensei",
-   "starter": 55,
+   "starter": 56,
    "placeringer": "9-13-7",
    "praemier": 400248,
    "rekord": "19,2k *13,1m 14,3l 11,7ak 12,5am"
@@ -204,7 +204,7 @@
    "foedt": "2022-04-11",
    "far": "Bvlgari Peak",
    "mor": "Gianina (SE)",
-   "starter": 25,
+   "starter": 26,
    "placeringer": "4-3-4",
    "praemier": 90923,
    "rekord": "16,8m 14,0ak *13,9am"
@@ -458,6 +458,30 @@
   }
  ],
  "resultater": [
+  {
+   "id": "838369-647771",
+   "dato": "2026-11-20",
+   "bane": "Od",
+   "loeb": 6,
+   "hestId": 647771,
+   "hest": "Hokita",
+   "placering": "0",
+   "tid": "opgg",
+   "distance": 1660,
+   "praemie": 0
+  },
+  {
+   "id": "838366-652943",
+   "dato": "2026-11-20",
+   "bane": "Od",
+   "loeb": 4,
+   "hestId": 652943,
+   "hest": "Le Mans",
+   "placering": "0",
+   "tid": "16,0a",
+   "distance": 2140,
+   "praemie": 0
+  },
   {
    "id": "838314-656994",
    "dato": "2026-11-18",
@@ -3880,22 +3904,6 @@
   }
  ],
  "kommende": [
-  {
-   "dato": "2026-11-20",
-   "bane": "Od",
-   "loeb": 4,
-   "hestId": 652943,
-   "hest": "Le Mans",
-   "kusk": "Morten Friis"
-  },
-  {
-   "dato": "2026-11-20",
-   "bane": "Od",
-   "loeb": 6,
-   "hestId": 647771,
-   "hest": "Hokita",
-   "kusk": "Morten Friis"
-  },
   {
    "dato": "2026-11-23",
    "bane": "Sk",
