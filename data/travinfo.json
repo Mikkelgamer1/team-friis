@@ -1,5 +1,5 @@
 {
- "opdateret": "2026-11-23T14:30:18.616Z",
+ "opdateret": "2026-11-24T14:47:37.155Z",
  "traener": {
   "foedt": 1983,
   "hjemmebane": "Skive Trav",
@@ -9,12 +9,12 @@
  "traenerStatistik": [
   {
    "aar": 2026,
-   "starter": 218,
+   "starter": 220,
    "sejre": 26,
    "toer": 32,
-   "treer": 24,
+   "treer": 25,
    "procent": 12,
-   "praemier": 801350
+   "praemier": 807350
   },
   {
    "aar": 2025,
@@ -56,12 +56,12 @@
  "kuskStatistik": [
   {
    "aar": 2026,
-   "starter": 299,
+   "starter": 302,
    "sejre": 35,
    "toer": 39,
-   "treer": 30,
+   "treer": 32,
    "procent": 12,
-   "praemier": 1039500
+   "praemier": 1049000
   },
   {
    "aar": 2025,
@@ -152,9 +152,9 @@
    "foedt": "2022-03-31",
    "far": "Maharajah (SE)",
    "mor": "Ballymena (SE)",
-   "starter": 8,
+   "starter": 9,
    "placeringer": "0-2-0",
-   "praemier": 40037,
+   "praemier": 42537,
    "rekord": "17,1m 15,6am"
   },
   {
@@ -360,10 +360,10 @@
    "foedt": "2023-05-22",
    "far": "International Moni (US)",
    "mor": "Tango Brodda (SE)",
-   "starter": 8,
-   "placeringer": "1-1-0",
-   "praemier": 12000,
-   "rekord": "19,4k 19,0m 17,1ak 16,4am"
+   "starter": 9,
+   "placeringer": "1-1-1",
+   "praemier": 15500,
+   "rekord": "19,4k 18,9m 17,1ak 16,4am"
   },
   {
    "id": 658589,
@@ -458,6 +458,30 @@
   }
  ],
  "resultater": [
+  {
+   "id": "838387-661285",
+   "dato": "2026-11-23",
+   "bane": "Sk",
+   "loeb": 2,
+   "hestId": 661285,
+   "hest": "Huff N Puff (SE)",
+   "placering": "4",
+   "tid": "16,4a",
+   "distance": 2060,
+   "praemie": 2500
+  },
+  {
+   "id": "838375-658341",
+   "dato": "2026-11-23",
+   "bane": "Sk",
+   "loeb": 1,
+   "hestId": 658341,
+   "hest": "Niiko Lane (SE)",
+   "placering": "3",
+   "tid": "18,9",
+   "distance": 2020,
+   "praemie": 3500
+  },
   {
    "id": "838369-647771",
    "dato": "2026-11-20",
@@ -3905,30 +3929,6 @@
  ],
  "kommende": [
   {
-   "dato": "2026-11-23",
-   "bane": "Sk",
-   "loeb": 1,
-   "hestId": 658341,
-   "hest": "Niiko Lane (SE)",
-   "kusk": "Morten Friis"
-  },
-  {
-   "dato": "2026-11-23",
-   "bane": "Sk",
-   "loeb": 2,
-   "hestId": 661285,
-   "hest": "Huff N Puff (SE)",
-   "kusk": "Morten Friis"
-  },
-  {
-   "dato": "2026-11-23",
-   "bane": "Sk",
-   "loeb": 91,
-   "hestId": 659965,
-   "hest": "Thorin E P (DE)",
-   "kusk": "Morten Friis"
-  },
-  {
    "dato": "2026-11-27",
    "bane": "År",
    "loeb": 2,
@@ -3943,6 +3943,54 @@
    "hestId": 653984,
    "hest": "Major Love (NL)",
    "kusk": "Birger Jørgensen"
+  },
+  {
+   "dato": "2026-11-28",
+   "bane": "Ål",
+   "loeb": 3,
+   "hestId": 638223,
+   "hest": "Diamant Østervang",
+   "kusk": "Morten Friis"
+  },
+  {
+   "dato": "2026-11-28",
+   "bane": "Ål",
+   "loeb": 6,
+   "hestId": 652943,
+   "hest": "Le Mans",
+   "kusk": "Morten Friis"
+  },
+  {
+   "dato": "2026-11-30",
+   "bane": "Sk",
+   "loeb": 1,
+   "hestId": 656270,
+   "hest": "Music",
+   "kusk": "Birger Jørgensen"
+  },
+  {
+   "dato": "2026-11-30",
+   "bane": "Sk",
+   "loeb": 2,
+   "hestId": 656994,
+   "hest": "Master K",
+   "kusk": "Morten Friis"
+  },
+  {
+   "dato": "2026-11-30",
+   "bane": "Sk",
+   "loeb": 3,
+   "hestId": 653138,
+   "hest": "Lærke D",
+   "kusk": "Morten Friis"
+  },
+  {
+   "dato": "2026-11-30",
+   "bane": "Sk",
+   "loeb": 4,
+   "hestId": 661285,
+   "hest": "Huff N Puff (SE)",
+   "kusk": "Morten Friis"
   }
  ]
 }
