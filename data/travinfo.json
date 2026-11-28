@@ -1,5 +1,5 @@
 {
- "opdateret": "2026-11-27T13:46:32.466Z",
+ "opdateret": "2026-11-28T12:55:12.343Z",
  "traener": {
   "foedt": 1983,
   "hjemmebane": "Skive Trav",
@@ -9,12 +9,12 @@
  "traenerStatistik": [
   {
    "aar": 2026,
-   "starter": 220,
+   "starter": 222,
    "sejre": 26,
    "toer": 32,
-   "treer": 25,
+   "treer": 26,
    "procent": 12,
-   "praemier": 807350
+   "praemier": 810850
   },
   {
    "aar": 2025,
@@ -243,7 +243,7 @@
    "foedt": "2019-04-04",
    "far": "Love You (FR)",
    "mor": "Adena Boko (SE)",
-   "starter": 62,
+   "starter": 63,
    "placeringer": "6-14-11",
    "praemier": 223800,
    "rekord": "15,7k 16,9m 18,8l 14,4ak 16,5am"
@@ -282,10 +282,10 @@
    "foedt": "2023-06-20",
    "far": "Ens Snapshot (US)",
    "mor": "Lady Pettersson",
-   "starter": 5,
-   "placeringer": "0-1-2",
-   "praemier": 14500,
-   "rekord": "19,5k 19,3m 16,7am"
+   "starter": 6,
+   "placeringer": "0-1-3",
+   "praemier": 18000,
+   "rekord": "19,5k 19,3m 19,1ak 16,7am"
   },
   {
    "id": 656269,
@@ -458,6 +458,30 @@
   }
  ],
  "resultater": [
+  {
+   "id": "838436-653984",
+   "dato": "2026-11-27",
+   "bane": "År",
+   "loeb": 5,
+   "hestId": 653984,
+   "hest": "Major Love (NL)",
+   "placering": "0",
+   "tid": "18,7",
+   "distance": 2320,
+   "praemie": 0
+  },
+  {
+   "id": "838439-657569",
+   "dato": "2026-11-27",
+   "bane": "År",
+   "loeb": 2,
+   "hestId": 657569,
+   "hest": "Mayidancenow",
+   "placering": "3",
+   "tid": "19,1a",
+   "distance": 1800,
+   "praemie": 3500
+  },
   {
    "id": "838387-661285",
    "dato": "2026-11-23",
@@ -3928,22 +3952,6 @@
   }
  ],
  "kommende": [
-  {
-   "dato": "2026-11-27",
-   "bane": "År",
-   "loeb": 2,
-   "hestId": 657569,
-   "hest": "Mayidancenow",
-   "kusk": "Birger Jørgensen"
-  },
-  {
-   "dato": "2026-11-27",
-   "bane": "År",
-   "loeb": 5,
-   "hestId": 653984,
-   "hest": "Major Love (NL)",
-   "kusk": "Birger Jørgensen"
-  },
   {
    "dato": "2026-11-28",
    "bane": "Ål",
